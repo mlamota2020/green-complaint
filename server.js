@@ -6,11 +6,15 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const mongoose = require("mongoose");
+
+const { createAdminUser } = require("./libs/adminUser");
 
 // Initializations
 
 const app = express();
 require('./config/passport');
+createAdminUser();
 
 // Settings
 

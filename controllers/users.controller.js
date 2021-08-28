@@ -57,4 +57,10 @@ usersCTRL.logOut = (req, res) => {
     res.redirect("/users/signin");
 }
 
+usersCTRL.changeAccount = (req, res) => {
+    req.logout();
+    req.flash("alert_msg", "Add the credentials of the account.");
+    res.redirect("/users/signin");
+}
+
 module.exports = usersCTRL;

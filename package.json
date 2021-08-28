@@ -90,13 +90,15 @@
   "devDependencies": {
     "dotenv": "^10.0.0",
     "electron": "^13.2.2",
-    "nodemon": "^2.0.12",
-    "npm-check-updates": "^11.8.3"
+    "nodemon": "^2.0.12"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js && chrome http://localhost:4000/",
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . green-complaint --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/icons/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",    
+    "package-linux": "electron-packager . green-complaint--overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "Environment Club - YLA",
