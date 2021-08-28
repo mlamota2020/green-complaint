@@ -1,5 +1,6 @@
 node_modules
 .vscode
+release-builds
 .env
 file.txt
 Green Complaint -.code-workspace

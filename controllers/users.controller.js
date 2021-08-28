@@ -34,7 +34,7 @@ usersCTRL.signUp = async (req, res) => {
         });
     } else {
         const newUser = new User({name, email, password});
-        newUser.password = await newUser.encryptPasword(password);
+        newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         req.flash('success_msg', 'You\'re registred!! Now sign in to your account');
         res.redirect('/users/signin');
