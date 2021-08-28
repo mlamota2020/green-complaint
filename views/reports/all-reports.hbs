@@ -1,0 +1,79 @@
+<div style="min-height: 100vh;">
+<div id="sidebar">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar shadow" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <li class="nav-item">
+        <a href="/home" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+          <i class="bi bi-house-door" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports" class="nav-link active py-3 border-bottom border-dark bg-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
+          <i class="bi bi-flag" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports/add" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Create report">
+          <i class="bi bi-plus" style="font-size: 24px;"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="icons/person.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small shadow dropdown-menu-dark p-2" aria-labelledby="dropdownUser3">
+        <li class="text-center"><p class="h4">{{user.name}}</p></li>
+        <li class="text-center"><p>{{user.email}}</p></li>
+        <li class="text-center"><hr class="dropdown-divider"></li>
+        <li class="text-center"><a class="dropdown-item" href="/logout">Log-out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="content" class="mt-4 me-4" style="margin-left: 100px;">
+  <div class="row">
+    {{#each reports}}
+    <div class="col-lg-3">
+        <div class="card my-3">
+            <div class="card-header">
+              <div class="clearfix">
+                <div class="float-start"><h4>{{title}}</h4></div>
+                <div class="float-end">
+                  <span class="badge rounded-pill bg-warning text-dark state" tabindex="0" style="cursor:pointer;" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" title="Status" data-bs-content="{{state}}"><i class="bi bi-exclamation-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+                <p>{{report}}</p>
+                <small class="mt-3 text-muted">Created by: <span class="text-primary">{{person_name}}</span></small>
+                <form class="w-100" method="POST" action="/reports/delete/{{_id}}?_method=DELETE">
+                    <button type="submit" class="btn btn-danger ms-1 mt-3" data-bs-toggle="tooltip" data-bs-original-title="Are you sure?? THERE'S NO HOLDING BACK!!!">Mark as resolved and delete</button>
+                </form>
+                </div>
+            </div>
+            </div>
+            {{else}}
+            <div class="card mx-auto my-auto w-25">
+                <div class="card-body">
+                    <h1>No reports D:</h1>
+                    <p clsss="lead">There are not reports yet. :(</p>
+                    <a href="/reports/add" class="btn btn-success w-100">Create one!</a>
+    </div>
+  </div>
+    {{/each}}
+    
+        </div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i class="bi bi-exclamation-circle me-2"></i>
+      <strong class="me-auto">Green Complaint</strong>
+      <small>now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body p-5">
+      Click on the icon at the right of the title to see the status of the report!
+    </div>
+  </div>
+</div>

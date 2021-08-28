@@ -1,0 +1,34 @@
+{{#if success_msg}}
+<div class="alert alert-success alert-dismissible fade show mt-5 me-5" role="alert" style="margin-left: 100px;">
+  <strong><i class="bi bi-check"></i></strong> {{success_msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if alert_msg}}
+<div class="alert alert-warning alert-dismissible fade show mt-5 me-5" role="alert" style="margin-left: 100px;">
+  <strong><i class="bi bi-exclamation-circle"></i></strong> {{alert_msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-danger alert-dismissible fade show mt-5 me-5" role="alert" style="margin-left: 100px;">
+  <strong><i class="bi bi-exclamation-circle"></i></strong> {{error_msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#each errors}}
+<div class="alert alert-warning alert-dismissible fade show mt-5 me-5" role="alert" style="margin-left: 100px;">
+  <strong><i class="bi bi-exclamation-circle"></i></strong> {{text}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}
+
+{{#if error}}
+<div class="alert alert-warning alert-dismissible fade show mt-5 me-5" role="alert" style="margin-left: 100px;">
+  <strong><i class="bi bi-exclamation-circle"></i></strong> {{error}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}

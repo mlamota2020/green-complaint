@@ -1,0 +1,65 @@
+<div style="min-height: 100vh;">
+<div id="sidebar">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar shadow" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <li class="nav-item">
+        <a href="/home" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+          <i class="bi bi-house-door" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
+          <i class="bi bi-flag" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports/add" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Create report">
+          <i class="bi bi-plus" style="font-size: 24px;"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="icons/person.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
+        <li><p class="h4">{{user.name}}</p></li>
+        <li><p>{{user.email}}</p></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="/logout">Log-out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="d-flex align-items-center justify-content-center flex-column" style="min-height: 100vh;">
+    <div class="border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden" style="width: 50%;background-color:#343a40;">
+        <div class="px-4 py-3 mb-2 bg-dark border-bottom border-dark text-center h2 text-light">
+          Create report
+        </div>
+        <form action="/reports/add" method="POST" style="background-color:#343a40;" class="p-5">
+
+            <label for="person_name"><small class="text-light">Your name:</small></label>
+            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Your name" name="person_name" value="{{user.name}}">
+
+            <label for="title"><small class="text-light">Title:</small></label>
+            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Title" name="title">
+
+            <label for="report"><small class="text-light">Your report:</small></label>
+            <textarea type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2);border-color: rgba(255, 255, 255, .3);" placeholder="Your report" name="report"></textarea>
+
+
+            <label for="state"><small class="text-light">State:</small></label>
+            <select name="state" class="form-select mb-3">
+              <option value="null" disabled selected>...</option>
+              <option value="Working on the problem">In progress</option>
+              <option value="Dangerous... very dangerous!!!!">Dangerous</option>
+              <option value="This is a new report">New</option>
+            </select>
+            
+              <button type="submit" class="btn btn-dark w-100 d-block" id="btn-spinner">Add report</button>
+        </form>
+      </div>  
+</div>
+</div>
+</div>

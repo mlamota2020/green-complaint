@@ -8,10 +8,6 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 
 Well, you can make changes and create a pull request with the commit. DON'T MAKE THE CHANGES DIRECTLY!!
 
-- ### You will public releases soon?
-
-Actually there is the release of version 1.2.0.
-
 ----------
 
 > • 2021 YLA - Environmental Club. Coded by Matias La Mota | Logo by Sebastián Heras. Made with ♥

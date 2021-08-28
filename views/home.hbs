@@ -1,0 +1,83 @@
+<style>body{overflow:hidden;}@media (max-width: 992px){body{overflow: auto!important;}#sidebar{position:fixed;top:0;left:0;}#content{margin-left:100px!important;}}}</style>
+<div class="d-flex" style="min-height: 100vh;">
+<div id="sidebar">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar shadow" style="width: 4.5rem;height:100vh;">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <li class="nav-item">
+        <a href="/home" class="nav-link active py-3 border-bottom border-dark bg-success" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+          <i class="bi bi-house-door" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
+          <i class="bi bi-flag" style="font-size: 24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/reports/add" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Create report">
+          <i class="bi bi-plus" style="font-size: 24px;"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="icons/person.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
+        <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="content" class="m-4">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong><i class="bi bi-check"></i> Welcome!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+  <h1>Welcome to Green Complaint</h1>
+  <small style="font-weight: 300;">Select an option.</small>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 pt-3 pb-2">
+      <div class="col">
+        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-1.jpg) no-repeat center center/cover;" href="/reports/add">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="z-index: 20;">
+           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Create a report</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small><i class="bi bi-box-arrow-right"></i></small>
+              </li>
+            </ul>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-2.jpg) no-repeat center center/cover;" href="/reports">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="z-index: 20;">
+           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">See reports</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small><i class="bi bi-box-arrow-right"></i></small>
+              </li>
+            </ul>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-3.jpg) no-repeat center center/cover;" href="https://younglivingacademy.edu.ec/" target="_blank" tabindex="0">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1" style="z-index: 20;">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Visit YLA page</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small><i class="bi bi-box-arrow-right"></i></small>
+              </li>
+            </ul>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
