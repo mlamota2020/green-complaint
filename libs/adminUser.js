@@ -1,5 +1,5 @@
 const User = require("./../models/User");
-
+/** Create an admin's user for developing. */
 const createAdminUser = async () => {
   const userFound = await User.findOne({ email: "admin@localhost" });
 

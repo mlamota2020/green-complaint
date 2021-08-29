@@ -1,11 +1,11 @@
 const usersCTRL = {};
 const passport = require('passport');
 const User = require('./../models/User');
-
+/** Render the view to sign-up users. */
 usersCTRL.renderSignUpForm = (req, res) => {
     res.render('users/signup');
 }
-
+/** Validate the data of the input's, encrypt the password and insert the data to the database. */
 usersCTRL.signUp = async (req, res) => {
     const errors = [];
     const { name, email, password, confirm_password } = req.body;
@@ -40,23 +40,23 @@ usersCTRL.signUp = async (req, res) => {
         res.redirect('/users/signin');
         }
     }
-
+/** Render the view to sign-in users. */
 usersCTRL.renderSignInForm = (req, res) => {
     res.render('users/signin');
 }
-
+/** Use of a authentication from 'passport' to sign-in the user. */
 usersCTRL.signIn = passport.authenticate('local', {
     failureRedirect: '/users/signin',
     successRedirect: '/home',
     failureFlash: true
 });
-
+/** Log-out the user. */
 usersCTRL.logOut = (req, res) => {
     req.logout();
     req.flash("success_msg", "You are logged out now.");
     res.redirect("/users/signin");
 }
-
+/** Log-out the user-an log-in with another account. */
 usersCTRL.changeAccount = (req, res) => {
     req.logout();
     req.flash("alert_msg", "Add the credentials of the account.");

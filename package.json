@@ -1,9 +1,10 @@
 {
   "name": "green-complaint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "bcryptjs": "^2.4.3",
     "boolean": "^3.1.4",
     "buffer-crc32": "^0.2.13",
@@ -97,10 +98,10 @@
     "dev": "nodemon app.js && chrome http://localhost:4000/",
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . green-complaint --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/icons/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",    
-    "package-linux": "electron-packager . green-complaint--overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=release-builds"
+    "package-win": "electron-packager . green-complaint --overwrite --platform=win32 --arch=ia32 --icon=public/icons/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",
+    "package-linux": "electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "Environment Club - YLA",
-  "license": "ISC"
+  "license": "CC0 1.0 Universal"
 }

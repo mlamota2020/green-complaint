@@ -7,6 +7,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const mongoose = require("mongoose");
+const handlebars = require('handlebars');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const { createAdminUser } = require("./libs/adminUser");
 
@@ -24,7 +26,8 @@ app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
+    extname: '.hbs',
+    handlebars: allowInsecurePrototypeAccess(handlebars)
 }));
 app.set('view engine', '.hbs');
 
@@ -49,7 +52,7 @@ app.use((req, res, next) => {
     res.locals.alert_msg = req.flash('alert_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
-    res.locals.user = req.user;
+    res.locals.user = req.user || null;
     next();
 });
 

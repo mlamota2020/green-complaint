@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-
+/** Model of the reports. */
 const ReportSchema = new Schema({
     person_name: { 
         type: String, 

@@ -79,38 +79,6 @@ body.loaded #loader {
   opacity: 0;
 }
 
-.cookies-advice {
-  display: none;
-  background: #fff;
-  padding: 20px;
-  width: calc(100% - 40px);
-  max-width: 300px;
-  border-radius: 10px;
-  padding-top: 60px;
-}
-
-.cookies-advice.active {
-  display: block;
-}
-
-.cookie {
-  max-width: 100px;
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
-}
-
-.backdrop-cookies.active {
-  display: block;
-}
-
-@media (max-width: 720px) {
-  .cookies-advice {
-    max-width: 100%;
-  }
-
-  .accept-cookies {
-    width: 20%!important;
-    display: inline;
-  }
+.bg-active {
+  background: linear-gradient(53.38deg,#087cfa 18.37%,#18e820 140.92%)!important;
 }
