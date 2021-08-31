@@ -15,9 +15,7 @@ reportsCTRL.createNewReport = async (req, res) => {
 }
 /** Catch all the reports in the database and show it in a view. */
 reportsCTRL.renderReports = async (req, res) => {
-    const reports = await Report.find()
-                                .sort({date: -1})
-                                .lean();
+    const reports = await Report.find().sort({'updatedAt': -1});
     res.render('reports/all-reports', { reports });
 }
 /** Use of a DELETE HTTP method with method-override to delete reports. */

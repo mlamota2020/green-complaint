@@ -1,14 +1,14 @@
 <div style="min-height: 100vh;">
 <div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar shadow" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar shadow my-5 ms-1 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius: 0 20px 20px 0;">
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
       <li class="nav-item">
-        <a href="/home" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+        <a href="/home" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
           <i class="bi bi-house-door" style="font-size: 24px;"></i>
         </a>
       </li>
       <li>
-        <a href="/reports" class="nav-link py-3 border-bottom border-dark link-success" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
+        <a href="/reports" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
           <i class="bi bi-flag" style="font-size: 24px;"></i>
         </a>
       </li>
@@ -19,10 +19,10 @@
       </li>
     </ul>
     <div class="dropdown">
-      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="icons/person.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle drop-icon" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <small>User</small>
       </a>
-      <ul class="dropdown-menu text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
+      <ul class="dropdown-menu drop-icon text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
         <li><h4 class="ms-3">Actions</h4></li>
         <li><hr class="dropdown-divider"></li>
         <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
@@ -58,6 +58,7 @@
             </select>
             
               <button type="submit" class="btn btn-dark w-100 d-block" id="btn-spinner">Add report</button>
+              <small class="text-muted">Your name will be automatically added.</small>
         </form>
       </div>  
 </div>

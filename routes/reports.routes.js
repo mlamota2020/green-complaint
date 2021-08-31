@@ -3,12 +3,12 @@ const router = Router();
 const { renderReportForm, createNewReport, renderReports, deleteReport } = require('./../controllers/reports.controller');
 const { isAuthenticated } = require('./../helpers/auth');
 
-router.get('/reports/add', isAuthenticated, renderReportForm);
+router.get('/reports/add', renderReportForm);
 
-router.post('/reports/add', isAuthenticated, createNewReport);
+router.post('/reports/add', createNewReport);
 
-router.get('/reports', isAuthenticated, renderReports);
+router.get('/reports', renderReports);
 
-router.delete('/reports/delete/:id', isAuthenticated, deleteReport);
+router.delete('/reports/delete/:id', deleteReport);
 
 module.exports = router;

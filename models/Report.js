@@ -14,8 +14,7 @@ const ReportSchema = new Schema({
         required: true 
     },
     state: { 
-        type: String, 
-        required: true 
+        type: String
     }
 }, {
     timestamps: true

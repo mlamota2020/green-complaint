@@ -29,10 +29,6 @@ body::-webkit-scrollbar-thumb:hover {
     background: rgb(98, 104, 109);
 }
 
-#footer .svg.mask img {
-  margin-top: 20px;
-}
-
 .nav-flush .nav-link {
   border-radius: 0!important;
 }
@@ -69,6 +65,7 @@ main::after {
 
 #loader.data-opacity {
   opacity: 0;
+  display: none;
 }
 
 body.loaded main::after {
