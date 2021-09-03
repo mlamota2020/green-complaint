@@ -39,18 +39,20 @@
   <div class="d-flex align-items-center justify-content-center flex-column" style="min-height: 100vh;">
     <div class="border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden" style="width: 50%;background-color:#343a40;">
         <div class="px-4 py-3 mb-2 bg-dark border-bottom border-dark text-center h2 text-light">
-          Create report
+          Edit report
         </div>
-        <form action="/reports/add" method="POST" style="background-color:#343a40;" class="p-5">
+        <form action="/reports/edit/{{report.id}}?_method=PUT" method="POST" style="background-color:#343a40;" class="p-5">
+        <input type="hidden" name="_method" value="PUT">
+
 
             <label for="person_name"><small class="text-light">Your name:</small></label>
-            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Your name" name="person_name" value="{{user.name}}">
+            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Your name" name="person_name" value="{{report.person_name}}">
 
             <label for="title"><small class="text-light">Title:</small></label>
-            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Title" name="title">
+            <input type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .3);" placeholder="Title" name="title" value="{{report.title}}">
 
             <label for="report"><small class="text-light">Your report:</small></label>
-            <textarea type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2);border-color: rgba(255, 255, 255, .3);" placeholder="Your report" name="report"></textarea>
+            <textarea type="text" class="form-control mb-3 text-light" style="background-color: rgba(255, 255, 255, .2);border-color: rgba(255, 255, 255, .3);" placeholder="Your report" name="report">{{report.report}}</textarea>
 
 
             <label for="state"><small class="text-light">State:</small></label>
@@ -61,7 +63,7 @@
               <option value="This is a new report">New</option>
             </select>
             
-              <button type="submit" class="btn btn-dark w-100 d-block" id="btn-spinner">Add report</button>
+              <button type="submit" class="btn btn-dark w-100 d-block" id="btn-spinner">Edit report</button>
               <small class="text-muted">Your name will be automatically added.</small>
         </form>
       </div>  

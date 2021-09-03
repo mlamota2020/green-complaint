@@ -19,6 +19,20 @@ reportsCTRL.renderReports = async (req, res) => {
     const reports = await Report.find().sort({'updatedAt': -1});
     res.render('reports/all-reports', { reports });
 }
+/** Use of a PUT HTTP method with method-override to edit reports. */
+
+reportsCTRL.renderEditReport = async (req, res) => {
+    const report = await Report.findOne(req.params);
+    res.render('reports/edit-report', { report });
+}
+/** Edit the report. */
+
+reportsCTRL.editReport = async (req, res) => {
+    const { person_name, title, report, state } = req.body;
+    await Report.findOneAndUpdate(req.params, { person_name, title, report, state });
+    req.flash('success_msg', 'Report edited successfully');
+    res.redirect('/reports');
+}
 /** Use of a DELETE HTTP method with method-override to delete reports. */
 reportsCTRL.deleteReport = async (req, res) => {
     await Report.findByIdAndDelete(req.params.id);

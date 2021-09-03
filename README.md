@@ -6,7 +6,7 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 
 - Refreshed UI
 - Account options
-- Marking reports as resolved
+- Create, edit, and mark reports as resolved.
 - And more...
 
 ![](capture.png)

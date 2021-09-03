@@ -21,10 +21,12 @@
     </ul>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle drop-icon" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <small>User</small>
+        <i class="bi bi-person"></i>
       </a>
       <ul class="dropdown-menu drop-icon text-small shadow dropdown-menu-dark p-2" aria-labelledby="dropdownUser3">
-        <li><h4 class="ms-3">Actions</h4></li>
+        <li><h4 class="ms-3">{{user.name}}</h4></li>
+<li><p class="ms-3 text-muted">{{user.email}}</p></li>
+<li><h4 class="ms-3">Actions</h4></li>
         <li><hr class="dropdown-divider"></li>
         <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
         <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
@@ -44,8 +46,9 @@
             <div class="modal-dialog w-100 mx-0 my-4" role="document">
     <div class="modal-content rounded-6 shadow-lg w-100">
       <div class="modal-header border-bottom-0 bg-light">
-        <h5 class="modal-title">{{title}}</h5>
+        <h5 class="modal-title me-auto">{{title}}</h5>
         <span class="badge rounded-pill bg-warning text-dark state" tabindex="0" style="cursor:pointer;" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" title="Status" data-bs-content="{{state}}"><i class="bi bi-exclamation-circle"></i></span>
+        <span class="ms-4"><a href="/reports/edit/{{id}}" class="link-dark text-decoration-none"><span class="bg-light p-3 rounded-pill shadow border"><i class="bi bi-pencil"></i> Edit</span></a></span>
       </div>
       <div class="modal-body">
         <p id="report">{{report}} </p><span class="ms-1" id="readMore"></span>

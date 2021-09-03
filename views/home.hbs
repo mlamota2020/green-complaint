@@ -20,10 +20,12 @@
     </ul>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle drop-icon" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <small>User</small>
+        <i class="bi bi-person"></i>
       </a>
       <ul class="dropdown-menu drop-icon text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
-        <li><h4 class="ms-3">Actions</h4></li>
+        <li><h4 class="ms-3">{{user.name}}</h4></li>
+<li><p class="ms-3 text-muted">{{user.email}}</p></li>
+<li><h4 class="ms-3">Actions</h4></li>
         <li><hr class="dropdown-divider"></li>
         <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
         <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
