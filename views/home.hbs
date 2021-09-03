@@ -1,7 +1,6 @@
-<style>body{overflow:hidden;}@media (max-width: 992px){body{overflow: auto!important;}#content{margin-left:200px!important;}}}</style>
 <div class="d-flex" style="min-height: 100vh;">
 <div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 ms-1 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius: 0 20px 20px 0;">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 ms-1 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;">
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
       <li class="nav-item">
         <a href="/home" class="nav-link py-3 border-bottom border-dark bg-active link-light" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
@@ -28,6 +27,8 @@
         <li><hr class="dropdown-divider"></li>
         <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
         <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
+<hr class="dropdown-divider">
+<li><a class="dropdown-item" href="/users/options/{{user.id}}">Options</a></li>
       </ul>
     </div>
   </div>

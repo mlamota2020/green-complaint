@@ -1,5 +1,6 @@
 const reportsCTRL = {};
 const Report = require('./../models/Report');
+const User = require('./../models/User');
 
 /** Render the view to create reports. */
 reportsCTRL.renderReportForm = (req, res) => {

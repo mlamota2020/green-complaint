@@ -8,5 +8,14 @@ helpers.isAuthenticated = (req, res, next) => {
         res.redirect('/users/signin');
     }
 }
+helpers.isLoggedIn = (req, res, next) => {
+    if (req.user) {
+        req.flash('alert_msg', 'You\'re already logged in.');
+        res.redirect('/home');
+    } else {
+        return next();
+    }
+}
+
 
 module.exports = helpers;

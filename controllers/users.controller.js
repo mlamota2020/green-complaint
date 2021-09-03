@@ -62,5 +62,16 @@ usersCTRL.changeAccount = (req, res) => {
     req.flash("alert_msg", "Add the credentials of the account.");
     res.redirect("/users/signin");
 }
+/** Render user options */
+usersCTRL.renderUserOptions = async (req, res) => {
+    const userData = await User.findOne(req.params);
+    res.render('users/options', { userData });
+}
+/** Delete user account. */
+usersCTRL.deleteAccount = async (req, res) => {
+    await User.findOneAndDelete(req.params);
+    req.flash('success_msg', 'The account has been deleted.');
+    res.redirect('/');
+}
 
 module.exports = usersCTRL;

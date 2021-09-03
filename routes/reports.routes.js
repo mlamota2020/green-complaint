@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const { renderReportForm, createNewReport, renderReports, deleteReport } = require('./../controllers/reports.controller');
-const { isAuthenticated } = require('./../helpers/auth');
+const { isAuthenticated, isLoggedIn } = require('./../helpers/auth');
 
 router.get('/reports/add', renderReportForm);
 

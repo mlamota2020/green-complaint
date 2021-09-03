@@ -79,3 +79,28 @@ body.loaded #loader {
 .bg-active {
   background: linear-gradient(53.38deg,#087cfa 18.37%,#18e820 140.92%)!important;
 }
+
+.sidebar{border-radius:0 20px 20px 0!important;}
+
+@media screen and (max-width: 1345px) {
+  #content {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #content::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    content: 'Oops! Sorry, but this page isn\'t adapted for mobile. Try flipping your phone horizontally.';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #f0f0f0;
+    z-index: 8523740958773598237459832759834750982370598347509832750928374589237045897230489723489027348097348923475780542452053530987209783529785489727459837495723495872349574257039847529834750923847598237450982374508274093798573098573984750293847;
+  }
+}

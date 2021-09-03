@@ -1,7 +1,7 @@
 <style>@media(min-width:576px){.modal-dialog{max-width:100%!important;margin:0}}</style>
 <div style="min-height: 100vh;">
 <div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 ms-1 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius:0 20px 20px 0;">
+  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius:0 20px 20px 0;">
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
       <li class="nav-item">
         <a href="/home" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
@@ -28,6 +28,8 @@
         <li><hr class="dropdown-divider"></li>
         <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
         <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
+<hr class="dropdown-divider">
+<li><a class="dropdown-item" href="/users/options/{{user.id}}">Options</a></li>
       </ul>
     </div>
   </div>
@@ -46,7 +48,7 @@
         <span class="badge rounded-pill bg-warning text-dark state" tabindex="0" style="cursor:pointer;" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" title="Status" data-bs-content="{{state}}"><i class="bi bi-exclamation-circle"></i></span>
       </div>
       <div class="modal-body">
-        <p>{{report}}</p>
+        <p id="report">{{report}} </p><span class="ms-1" id="readMore"></span>
         <hr class="mt-4">
       </div>
       <div class="modal-footer flex-column border-top-0">
@@ -59,7 +61,7 @@
     </div>
   </div>
             {{else}}
-            <div class="card mx-auto my-auto w-25">
+            <div class="card mx-auto my-auto w-50">
                 <div class="card-body">
                     <h1>No reports D:</h1>
                     <p clsss="lead">There are not reports yet. :(</p>
@@ -82,3 +84,18 @@
     </div>
   </div>
 </div>
+<script>
+const report = document.querySelector('#report');
+const readMore = document.querySelector('#readMore');
+
+if (report.innerText.length >= 400) {
+  report.classList.add('text-truncate');
+  report.setAttribute('style', 'max-width: 100%;')
+  readMore.innerHTML = `<span class="text-muted fw-bold" id="expand" style="cursor:pointer;"">Read more...</span>`;
+}
+
+readMore.addEventListener('click', () => {
+  report.classList.remove('text-truncate');
+  readMore.innerHTML = '';
+});
+</script>

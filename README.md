@@ -2,6 +2,15 @@
 
 If you see any issues, such as items being recycled the wrong way, say it on **Green Complaint**! Feel free to come and report the issue. Add the necessary data so that something can be done about it. You can also see reports from other people and support the environment. 
 
+## Features
+
+- Refreshed UI
+- Account options
+- Marking reports as resolved
+- And more...
+
+![](capture.png)
+
 ## Downloads
 
 You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.mlamota2020.repl.co).
