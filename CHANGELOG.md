@@ -4,9 +4,15 @@ All notable changes will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2021-09-03 (ok three versions in one day)
+
+### Added
+
+- Search througn reports.
+
 ## [1.3.0] - 2021-09-03 (yeah the same day that I created 1.2.0)
 
-## Added
+### Added
 
 - Did you spell bad? Now you can edit the report.
 
@@ -21,7 +27,7 @@ Better accounts.
 - A new section: Account options
 - Posibility to delete the account
 
-## Changed
+### Changed
 
 - The user can't go to sign-in (or sign-up) if it's logged.
 - Errors on the layout

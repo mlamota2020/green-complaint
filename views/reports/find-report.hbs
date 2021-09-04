@@ -1,6 +1,5 @@
-<style>@media(min-width:576px){.modal-dialog{max-width:100%!important;margin:0}}</style>
 <div style="min-height: 100vh;">
-<div id="sidebar">
+    <div id="sidebar">
   <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius:0 20px 20px 0;">
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
       <li class="nav-item">
@@ -36,19 +35,10 @@
     </div>
   </div>
 </div>
-<div id="content" class="mt-4 me-4" style="margin-left: 100px;">
-  <div class="reports">
-    {{#if reports}}
-    <h1 class="fw-bold">Reports</h1>
-    <small>Search through the new reports.</small>
-    {{/if}}
-    <form action="/reports/find" method="POST" class="d-flex gap-3">
-      <i class="bi bi-search" style="position: absolute;top: 142px;right: 150px;"></i>
-    <input type="text" class="form-control rounded-pill shadow my-4 p-3 flex-grow-1" placeholder="Type here to search..." name="filter">
-    <button type="submit" class="btn btn-primary rounded-pill flex-shrink-0 h-50 my-auto bg-active border-0">Search</button>
-    </form>
-    {{#each reports}}
-            <div class="modal-dialog w-100 mx-0 my-4" role="document">
+<div id="content">
+    <h1 class=" mt-5 text-center fw-bolder">Finded report</h1>
+    {{#each findedReport}}
+        <div class="modal-dialog w-100 mx-auto my-4" role="document">
     <div class="modal-content rounded-6 shadow-lg w-100">
       <div class="modal-header border-bottom-0 bg-light">
         <h5 class="modal-title me-auto">{{title}}</h5>
@@ -68,42 +58,8 @@
       </div>
     </div>
   </div>
-            {{else}}
-            <div class="card mx-auto my-auto w-50">
-                <div class="card-body">
-                    <h1>No reports D:</h1>
-                    <p clsss="lead">There are not reports yet. :(</p>
-                    <a href="/reports/add" class="btn btn-success w-100">Create one!</a>
-                </div>
-            </div>
+    {{else}}
+        <small class="mt-5 text-center">Nothing founded...</small>
     {{/each}}
-    
-        </div>
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-  <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <i class="bi bi-exclamation-circle me-2"></i>
-      <strong class="me-auto">Green Complaint</strong>
-      <small>now</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body p-5">
-      Click on the icon at the right of the title to see the status of the report!
-    </div>
-  </div>
 </div>
-<script>
-const report = document.querySelector('#report');
-const readMore = document.querySelector('#readMore');
-
-if (report.innerText.length >= 400) {
-  report.classList.add('text-truncate');
-  report.setAttribute('style', 'max-width: 100%;')
-  readMore.innerHTML = `<span class="text-muted fw-bold" id="expand" style="cursor:pointer;"">Read more...</span>`;
-}
-
-readMore.addEventListener('click', () => {
-  report.classList.remove('text-truncate');
-  readMore.innerHTML = '';
-});
-</script>
+</div>

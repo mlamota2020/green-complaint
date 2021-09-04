@@ -39,5 +39,11 @@ reportsCTRL.deleteReport = async (req, res) => {
     req.flash('success_msg', 'The report has been marked as resolved and deleted. I told you there isn\'t holding back.');
     res.redirect('/reports');
 }
+/** Search in the database the required report. */
+reportsCTRL.findReport = async (req, res) => {
+    const { filter } = req.body;
+    const findedReport = await Report.find({ report: filter });
+    res.render('reports/find-report', { findedReport });
+}
 
 module.exports = reportsCTRL;
