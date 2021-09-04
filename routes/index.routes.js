@@ -7,6 +7,6 @@ router.get('/', isLoggedIn, renderIndex);
 
 router.get('/home', isAuthenticated, renderHome);
 
-router.get('*', render404Page);
+router.get(render404Page);
 
 module.exports = router;
