@@ -11,6 +11,19 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 
 ![](capture.png)
 
+## Install in your desktop
+
+Want to create your own? Or contribute? Perfect. To install Green Complaint on your desktop first you need clone the repo, install all the dependencies, and run.
+
+```bash
+$ git clone https://github.com/mlamota2020green-complaint.git
+$ cd green-complaint
+$ npm install
+$ npm run dev
+```
+
+Nodemon will help you by restarting the app when yo do changes to it.
+
 ## Downloads
 
 You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.mlamota2020.repl.co).

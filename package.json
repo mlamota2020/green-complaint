@@ -77,6 +77,8 @@
     "sprintf-js": "^1.1.2",
     "string_decoder": "^1.1.1",
     "sumchecker": "^3.0.1",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^2.2.10",
     "to-readable-stream": "^1.0.0",
     "tunnel": "^0.0.6",
     "type-fest": "^0.13.1",
@@ -96,7 +98,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "dev": "nodemon app.js && chrome http://localhost:4000/",
-    "start": "electron .",
+    "start": "node app.js",
+    "app": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . green-complaint --overwrite --platform=win32 --arch=ia32 --icon=public/icons/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",
     "package-linux": "electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=release-builds"
