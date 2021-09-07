@@ -16,7 +16,7 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 Want to create your own? Or contribute? Perfect. To install Green Complaint on your desktop first you need clone the repo, install all the dependencies, and run.
 
 ```bash
-$ git clone https://github.com/mlamota2020green-complaint.git
+$ git clone https://github.com/mlamota2020/green-complaint.git
 $ cd green-complaint
 $ npm install
 $ npm run dev
