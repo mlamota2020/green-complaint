@@ -1,6 +1,6 @@
 {
   "name": "green-complaint",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Report environment problems",
   "main": "main.js",
   "dependencies": {
@@ -89,12 +89,15 @@
     "yauzl": "^2.10.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.4",
     "dotenv": "^10.0.0",
     "electron": "^13.2.2",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo Ready!",
     "dev": "nodemon app.js && chrome http://localhost:4000/",
     "start": "node app.js",
     "app": "electron .",

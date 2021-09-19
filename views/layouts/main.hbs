@@ -4,61 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Green Complaint">
+    <meta name="description" content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
+    <meta name="keywords" content="green, complaint, environment, yla, young, living, academy">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Environmental Club - YLA">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Green Complaint | Report environment problems">
+    <meta property="og:description" content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
+    <meta property="og:image" content="https://greencomplaint.ml/assets/screenshot.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://greencomplaint.ml/">
+    <meta property="twitter:title" content="Green Complaint | Report environment problems">
+    <meta property="twitter:description" content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
+    <meta property="twitter:image" content="https://greencomplaint.ml/assets/screenshot.png">
+    <link rel="apple-touch-icon" href="/icons/favicon.ico">
     <title>Green Complaint | Report enviroment problems</title>
     <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
 </head>
 <body>
-    <div class="p-3 rounded-3 bg-light position-fixed" id="loader" style="z-index: 100000000000!important;">
-      <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
   <main>
     {{>messages}}
     {{{body}}}
 </main>
-    <div id="btn-zone" class="lead position-fixed bottom-0 end-0 m-3"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="./renderer.js"></script>
-
-    <script>
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-      })
-    </script>
-
-    <script>
-      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-      })
-    </script>
-  
-    <script>
-      var popover = new bootstrap.Popover(document.querySelector('.state'), {
-  trigger: 'focus'
-})
-    </script>
-
-    <script>
-      document.querySelectorAll('#btn-spinner').addEventListener('click', () => {
-        document.querySelectorAll('#btn-spinner').classList.add('disabled');
-        document.querySelector('#btn-zone').innerHTML += `<span class="spinner-border text-success" role="status" aria-hidden="true" style="width: 5rem;height: 5rem;"></span>`;
-      });
-    </script>
-    <script>
-      window.onload = () => {
-        document.body.classList.add('loaded');
-        setTimeout(() => {
-          document.querySelector('#loader').classList.add('data-opacity');
-        }, 300);
-      }
-    </script>
 </body>
 </html>

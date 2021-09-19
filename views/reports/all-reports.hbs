@@ -1,97 +1,64 @@
-<style>@media(min-width:576px){.modal-dialog{max-width:100%!important;margin:0}}</style>
-<div style="min-height: 100vh;">
-<div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;border-radius:0 20px 20px 0;">
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-      <li class="nav-item">
-        <a href="/home" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-          <i class="bi bi-house-door" style="font-size: 24px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="/reports" class="nav-link py-3 border-bottom border-dark bg-active link-light" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
-          <i class="bi bi-flag" style="font-size: 24px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="/reports/add" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Create report">
-          <i class="bi bi-plus" style="font-size: 24px;"></i>
-        </a>
-      </li>
-    </ul>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle drop-icon" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-person"></i>
-      </a>
-      <ul class="dropdown-menu drop-icon text-small shadow dropdown-menu-dark p-2" aria-labelledby="dropdownUser3">
-        <li><h4 class="ms-3">{{user.name}}</h4></li>
-<li><p class="ms-3 text-muted">{{user.email}}</p></li>
-<li><h4 class="ms-3">Actions</h4></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
-        <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
-<hr class="dropdown-divider">
-<li><a class="dropdown-item" href="/users/options/{{user.id}}">Options</a></li>
-      </ul>
+<div class="min-h-screen bg-gray-100">
+  <!-- Sidebar -->
+    <div class="fixed bg-white shadow-xl rounded-xl top-10 left-5 h-3/4">
+        <div class="flex flex-col items-center justify-center">
+            <ul>
+                <li>
+                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-house-door"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-flag"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-check"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports/add" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-plus"></i>
+                    </a>
+                </li>
+            </ul>
+            <a class="inline-block px-6 py-3 mt-44 hover:text-green-500 user-options" href="/users/options/{{user.id}}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0   110-2 1 1 0 010 2z" />
+                </svg>
+            </a>
+        </div>
     </div>
-  </div>
-</div>
-<div id="content" class="mt-4 me-4" style="margin-left: 100px;">
-  <div class="reports">
-    {{#if reports}}
-    <h1 class="fw-bold">Reports</h1>
-    <small>Search through the new reports.</small>
-    {{/if}}
-    <form action="/reports/find" method="POST" class="d-flex gap-3">
-      <i class="bi bi-search" style="position: absolute;top: 142px;right: 150px;"></i>
-    <input type="text" class="form-control rounded-pill shadow my-4 p-3 flex-grow-1" placeholder="Type here to search..." name="filter">
-    <button type="submit" class="btn btn-primary rounded-pill flex-shrink-0 h-50 my-auto bg-active border-0">Search</button>
-    </form>
-    {{#each reports}}
-            <div class="modal-dialog w-100 mx-0 my-4" role="document">
-    <div class="modal-content rounded-6 shadow-lg w-100">
-      <div class="modal-header border-bottom-0 bg-light">
-        <h5 class="modal-title me-auto">{{title}}</h5>
-        <span class="badge rounded-pill bg-warning text-dark state" tabindex="0" style="cursor:pointer;" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" title="Status" data-bs-content="{{state}}"><i class="bi bi-exclamation-circle"></i></span>
-        <span class="ms-4"><a href="/reports/edit/{{id}}" class="link-dark text-decoration-none"><span class="bg-light p-3 rounded-pill shadow border"><i class="bi bi-pencil"></i> Edit</span></a></span>
-      </div>
-      <div class="modal-body">
-        <p id="report">{{report}} </p><span class="ms-1" id="readMore"></span>
-        <hr class="mt-4">
-      </div>
-      <div class="modal-footer flex-column border-top-0">
-        <small><i class="bi bi-person"></i> Created by: <span class="text-primary">{{person_name}}</span></small>
-        <small><i class="bi bi-calendar"></i> Created at: <span class="text-primary">{{createdAt}}</span></small>
-        <form method="POST" action="/reports/delete/{{_id}}?_method=DELETE">
-                    <button type="submit" class="btn btn-danger ms-1 mt-3 float-end" data-bs-toggle="tooltip" data-bs-original-title="Are you sure?? THERE'S NO HOLDING BACK!!!">Mark as resolved and delete</button>
-                </form>
-      </div>
-    </div>
-  </div>
-            {{else}}
-            <div class="card mx-auto my-auto w-50">
-                <div class="card-body">
-                    <h1>No reports D:</h1>
-                    <p clsss="lead">There are not reports yet. :(</p>
-                    <a href="/reports/add" class="btn btn-success w-100">Create one!</a>
+    <div class="pt-10 ml-32 content">
+      {{#if reports}}
+         <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">Reports</h1>
+      {{/if}}
+      <!-- Reports  -->
+      {{#each reports}}
+      <div id="reports" class="flex flex-col justify-center gap-10">
+            <!-- Reports -->
+            <div class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl">
+                <div class="flex items-center justify-between p-4 bg-gray-200 rounded-t-lg header">
+                    <h1 class="text-2xl font-semibold">{{title}}</h1>
+                    <a href="/reports/edit/{{id}}" class="inline-block p-2 text-green-500 bg-gray-50 rounded-xl"><i class="bi bi-pencil"></i> Edit</a>
+                    <form action="/reports/delete/{{id}}?_method=DELETE" method="POST">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button type="submit" href="/reports/delete/{{id}}" class="inline-block p-2 text-white bg-green-500 rounded-xl">Mark as resolved</button>
+                    </form>
+                </div>
+                <div class="px-4 rounded-b-lg py-7 report-content">
+                    <p class="text-gray-500" id="report">{{report}}</p>
+                    <p class="mt-5 text-center">Created by <span class="text-green-500"><img src="https://avatars.dicebear.com/api/initials/{{person_name}}.svg" class="inline-block w-7 h-7" alt="User Icon"> {{person_name}}</span></p>
+                    <p class="mt-5 text-center">Created at <span class="text-green-500">{{createdAt}}</span></p>
                 </div>
             </div>
-    {{/each}}
-    
-        </div>
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-  <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <i class="bi bi-exclamation-circle me-2"></i>
-      <strong class="me-auto">Green Complaint</strong>
-      <small>now</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            {{else}}
+          <p class="text-center text-black">No reports :( please <a href="/reports/add" class="inline-block text-green-500 underline">create one!</a></p>
+      {{/each}}
     </div>
-    <div class="toast-body p-5">
-      Click on the icon at the right of the title to see the status of the report!
-    </div>
-  </div>
-</div>
+</div></div>
 <script>
 const report = document.querySelector('#report');
 const readMore = document.querySelector('#readMore');
@@ -99,7 +66,7 @@ const readMore = document.querySelector('#readMore');
 if (report.innerText.length >= 400) {
   report.classList.add('text-truncate');
   report.setAttribute('style', 'max-width: 100%;')
-  readMore.innerHTML = `<span class="text-muted fw-bold" id="expand" style="cursor:pointer;"">Read more...</span>`;
+  readMore.innerHTML = `<span class="font-bold text-gray-500" id="expand">Read more...</span>`;
 }
 
 readMore.addEventListener('click', () => {

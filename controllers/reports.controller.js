@@ -1,6 +1,6 @@
 const reportsCTRL = {};
 const Report = require('./../models/Report');
-const User = require('./../models/User');
+const ResolvedReport = require('./../models/ResolvedReport');
 
 /** Render the view to create reports. */
 reportsCTRL.renderReportForm = (req, res) => {
@@ -35,15 +35,26 @@ reportsCTRL.editReport = async (req, res) => {
 }
 /** Use of a DELETE HTTP method with method-override to delete reports. */
 reportsCTRL.deleteReport = async (req, res) => {
+    const { person_name, title, report, state } = await Report.findById(req.params.id);
+    const markReportAsResolved = new ResolvedReport({ person_name, title, report, state });
+    await markReportAsResolved.save();
     await Report.findByIdAndDelete(req.params.id);
-    req.flash('success_msg', 'The report has been marked as resolved and deleted. I told you there isn\'t holding back.');
+    req.flash('success_msg', 'The report has been marked as resolved.');
     res.redirect('/reports');
 }
-/** Search in the database the required report. */
-reportsCTRL.findReport = async (req, res) => {
-    const { filter } = req.body;
-    const findedReport = await Report.find({ report: filter });
-    res.render('reports/find-report', { findedReport });
+/** Get the marked as resolved reports and show it in a view. */
+reportsCTRL.renderResolvedReports = async (req, res) => {
+    const resolvedReports = await ResolvedReport.find().sort({'createdAt': -1});
+    res.render('reports/resolved-reports', { resolvedReports });
+}
+
+reportsCTRL.restoreReport = async (req, res) => {
+    const { person_name, title, report, state } = await ResolvedReport.findById(req.params.id);
+    const markReportAsResolved = new Report({ person_name, title, report, state });
+    await markReportAsResolved.save();
+    await ResolvedReport.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'The report has been restored.');
+    res.redirect('/reports');
 }
 
 module.exports = reportsCTRL;

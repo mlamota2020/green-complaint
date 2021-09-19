@@ -1,106 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-h1 {
-    margin-block-start: 0;
-    margin-block-end: 5px;
+*, *::before, *::after {
+  outline: none;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 }
 
 body {  
-    font-family: 'Montserrat', sans-serif!important;
+    font-family: 'Inter', sans-serif!important;
     overflow-x: hidden;
-    background: url(../media/bg.svg) no-repeat fixed center/cover;
-}
-
-body::-webkit-scrollbar {
-    background: #f0f0f0;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: rgb(33, 37, 41);
-    border-radius: 20px;
-    border-bottom: 4px solid #f0f0f0;
-    border-left: 4px solid #f0f0f0;
-    border-right: 5px solid #f0f0f0;
-    border-top: 5px solid #f0f0f0;
-    border-radius: 8px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: rgb(98, 104, 109);
-}
-
-.nav-flush .nav-link {
-  border-radius: 0!important;
-}
-
-.index-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #212529;
-  opacity: .5;
-  z-index: 10;
-}
-
-main::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, .3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000000000!important;
-}
-
-#loader {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 300ms ease;
-}
-
-#loader.data-opacity {
-  opacity: 0;
-  display: none;
-}
-
-body.loaded main::after {
-  display: none;
-}
-
-body.loaded #loader {
-  opacity: 0;
-}
-
-.bg-active {
-  background: linear-gradient(53.38deg,#087cfa 18.37%,#18e820 140.92%)!important;
-}
-
-.sidebar{border-radius:0 20px 20px 0!important;}
-
-@media screen and (max-width: 1345px) {
-  #content {
-    margin-right: 30px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #content::before {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    content: 'Oops! Sorry, but this page isn\'t adapted for mobile. Try flipping your phone horizontally.';
-    min-height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #f0f0f0;
-    z-index: 8523740958773598237459832759834750982370598347509832750928374589237045897230489723489027348097348923475780542452053530987209783529785489727459837495723495872349574257039847529834750923847598237450982374508274093798573098573984750293847;
-  }
 }

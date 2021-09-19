@@ -1,89 +1,69 @@
-<div class="d-flex" style="min-height: 100vh;">
-<div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 bg-dark sidebar my-5 ms-1 shadow-lg h-75" style="width: 4.5rem;height:100%;position: fixed;top: 0;left: 0;">
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-      <li class="nav-item">
-        <a href="/home" class="nav-link py-3 border-bottom border-dark bg-active link-light" id="btn-spinner" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-          <i class="bi bi-house-door" style="font-size: 24px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="/reports" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="See all reports">
-          <i class="bi bi-flag" style="font-size: 24px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="/reports/add" class="nav-link py-3 border-bottom border-dark link-light" id="btn-spinner" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Create report">
-          <i class="bi bi-plus" style="font-size: 24px;"></i>
-        </a>
-      </li>
-    </ul>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none dropdown-toggle drop-icon" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-person"></i>
-      </a>
-      <ul class="dropdown-menu drop-icon text-small shadow dropdown-menu-dark px-2" aria-labelledby="dropdownUser3">
-        <li><h4 class="ms-3">{{user.name}}</h4></li>
-<li><p class="ms-3 text-muted">{{user.email}}</p></li>
-<li><h4 class="ms-3">Actions</h4></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a href="/users/changeaccount" class="dropdown-item">Change account</a></li>
-        <li><a class="dropdown-item" href="/users/logout">Log-out</a></li>
-<hr class="dropdown-divider">
-<li><a class="dropdown-item" href="/users/options/{{user.id}}">Options</a></li>
-      </ul>
+<div class="min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <div class="fixed bg-white shadow-xl rounded-xl top-10 left-5 h-3/4">
+        <div class="flex flex-col items-center justify-center">
+            <ul>
+                <li>
+                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-house-door"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-flag"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-check"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reports/add" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                        <i class="bi bi-plus"></i>
+                    </a>
+                </li>
+            </ul>
+            <a class="inline-block px-6 py-3 mt-44 hover:text-green-500 user-options" href="/users/options/{{user.id}}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0   110-2 1 1 0 010 2z" />
+                </svg>
+            </a>
+        </div>
     </div>
-  </div>
-</div>
-<div id="content" class="mt-4" style="margin-left: 100px!important;">
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong><i class="bi bi-check"></i> Welcome {{user.name}}!</strong>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-  <h1>Welcome to Green Complaint</h1>
-  <small style="font-weight: 300;">Select an option.</small>
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 pt-3 pb-2">
-      <div class="col">
-        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-1.jpg) no-repeat center center/cover;" href="/reports/add">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="z-index: 20;">
-           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Create a report</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small><i class="bi bi-box-arrow-right"></i></small>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-2.jpg) no-repeat center center/cover;" href="/reports">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="z-index: 20;">
-           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">See reports</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small><i class="bi bi-box-arrow-right"></i></small>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg index-card text-decoration-none" style="background: url(media/index.photo-3.jpg) no-repeat center center/cover;" href="https://younglivingacademy.edu.ec/" target="_blank" tabindex="0">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1" style="z-index: 20;">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Visit YLA page</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small><i class="bi bi-box-arrow-right"></i></small>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </div>
+    <div class="pt-10 ml-32 content">
+        <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">What do you want to do?</h1>
+        <div id="options" class="flex flex-col justify-center gap-10">
+            <!-- Reports option -->
+            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports">
+                <div class="p-4 bg-gray-200 rounded-t-lg header">
+                    <h1 class="text-2xl font-semibold">See all reports</h1>
+                </div>
+                <div class="flex flex-row items-center justify-between px-4 rounded-b-lg py-7 option-content">
+                    <p class="text-gray-500">See the newest reports around.</p>
+                    <p class="text-green-500">Go &rarr;</p>
+                </div>
+            </a>
+            <!-- Create option -->
+            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports">
+                <div class="p-4 bg-gray-200 rounded-t-lg header">
+                    <h1 class="text-2xl font-semibold">Create your own</h1>
+                </div>
+                <div class="flex flex-row items-center justify-between px-4 rounded-b-lg py-7 option-content">
+                    <p class="text-gray-500">Add your problem here.</p>
+                    <p class="text-green-500">Go &rarr;</p>
+                </div>
+            </a>
+            <!-- User option -->
+            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports">
+                <div class="p-4 bg-gray-200 rounded-t-lg header">
+                    <h1 class="text-2xl font-semibold">Edit your user</h1>
+                </div>
+                <div class="flex flex-row items-center justify-between px-4 rounded-b-lg py-7 option-content">
+                    <p class="text-gray-500">Go to your user options and change it your own.</p>
+                    <p class="text-green-500">Go &rarr;</p>
+                </div>
+            </a>
+        </div>
     </div>
-  </div>
 </div>

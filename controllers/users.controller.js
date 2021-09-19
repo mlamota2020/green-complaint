@@ -48,15 +48,18 @@ usersCTRL.renderSignInForm = (req, res) => {
 usersCTRL.signIn = passport.authenticate('local', {
     failureRedirect: '/users/signin',
     successRedirect: '/home',
-    failureFlash: true
-});
+    failureFlash: true,
+    successFlash: true
+}), () => {
+    req.flash('success_msg', `Hey ${user.name}!`)
+};
 /** Log-out the user. */
 usersCTRL.logOut = (req, res) => {
     req.logout();
     req.flash("success_msg", "You are logged out now.");
     res.redirect("/users/signin");
 }
-/** Log-out the user-an log-in with another account. */
+/** Log-out the user and log-in with another account. */
 usersCTRL.changeAccount = (req, res) => {
     req.logout();
     req.flash("alert_msg", "Add the credentials of the account.");
@@ -65,7 +68,7 @@ usersCTRL.changeAccount = (req, res) => {
 /** Render user options */
 usersCTRL.renderUserOptions = async (req, res) => {
     const userData = await User.findOne(req.params);
-    res.render('users/options', { userData });
+    res.render('users/options', { userData, layout: false });
 }
 /** Delete user account. */
 usersCTRL.deleteAccount = async (req, res) => {

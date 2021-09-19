@@ -7,9 +7,5 @@ indexCTRL.renderIndex = (req, res) => {
 indexCTRL.renderHome = (req, res) => {
     res.render('home');
 };
-/** When the user go to a non-existing page, render this view. */
-indexCTRL.render404Page = (req, res) => {
-    res.render('404', { layout: false });
-}
 
 module.exports = indexCTRL;

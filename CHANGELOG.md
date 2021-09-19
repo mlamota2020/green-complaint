@@ -4,6 +4,26 @@ All notable changes will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2021-9-18
+
+Second generation. Is here.
+
+### Added
+
+- A new Tailwind-powered UI.
+- A new section for resolved reports.
+- Better messages.
+
+### Changed
+
+- Change a litte bit the messages.
+- A new color palette.
+
+### Removed
+
+- Deleted bootstrap from the dependencies.
+- Unused views.
+
 ## [1.4.0] - 2021-09-03 (ok three versions in one day)
 
 ### Added
