@@ -51,7 +51,7 @@ The app is only for 64 bits Windows. Sorry for the inconveniences.
 
 - ### I'm building the app for all platforms and it throw me an error saying that it can't wrote an app for 'x' platform. What do I do?
 
-Chack that you're builing with admin privileges. This will help to create the app for other plaforms.
+Check that you're builing with admin privileges. This will help to create the app for other plaforms.
 
 ----------
 
