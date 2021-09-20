@@ -101,11 +101,12 @@
     "dev": "nodemon app.js && chrome http://localhost:4000/",
     "start": "node app.js",
     "app": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . green-complaint --overwrite --platform=win32 --arch=ia32 --icon=public/icons/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",
-    "package-linux": "electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=release-builds"
+    "build": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=build && electron-packager . green-complaint --overwrite --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --prune=true --out=build --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\" && electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=build",
+    "build-win": "electron-packager . green-complaint --overwrite --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --prune=true --out=build --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\"",
+    "build-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=build",
+    "build-linux": "electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=public/icons/1024x1024.png --prune=true --out=build"
   },
-  "keywords": [],
+  "keywords": ["green", "complaint", "environment", "yla", "young", "living", "academy"],
   "author": "Environment Club - YLA",
   "license": "CC0 1.0 Universal"
 }

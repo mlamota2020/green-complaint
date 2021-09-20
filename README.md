@@ -10,8 +10,6 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 - Restore reports
 - And more...
 
-![](capture.png)
-
 ## Install in your local environment
 
 Want to create your own? Or contribute? Perfect. To install Green Complaint on your desktop first you need clone the repo, install all the dependencies, and run.
@@ -34,9 +32,9 @@ With `npm start`, Green Complaint will start the server at [`localhost:4000`](ht
 
 `npm run dev` starts a development server powered by Nodemon by restarting it for you when you do changes.
 
-#### 3.- `npm run build-win|mac|linux`
+#### 3.- `npm run build`
 
-Packages the app in a 'build' folder for the selected OS. By example, if you want to package for Windows, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
+Packages the app in a 'build' folder for Windows (in 64 bits only, sorry 32 bits users :( ), macOS and Linux. You need to do it with admin privileges to create for all the platforms. If you want to build for a specific OS, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
 ## Downloads
 
 You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.mlamota2020.repl.co).
