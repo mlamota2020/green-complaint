@@ -8,6 +8,7 @@ helpers.isAuthenticated = (req, res, next) => {
         res.redirect('/users/signin');
     }
 }
+/** Helper to be used when the user enters by example to 'sign-up' when it's signed-in. If the user goes to that route, redirect to the home. */
 helpers.isLoggedIn = (req, res, next) => {
     if (req.user) {
         req.flash('alert_msg', 'You\'re already logged in.');

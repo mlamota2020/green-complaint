@@ -45,6 +45,14 @@ You want to use Green Complaint? No problem, you can download it [here](https://
 
 Well, you can make changes and create a pull request with the commit. DON'T MAKE THE CHANGES DIRECTLY!!
 
+- ### I'm a 32 bits Windows user and the app doesn't work
+
+The app is only for 64 bits Windows. Sorry for the inconveniences.
+
+- ### I'm building the app for all platforms and it throw me an error saying that it can't wrote an app for 'x' platform. What do I do?
+
+Chack that you're builing with admin privileges. This will help to create the app for other plaforms.
+
 ----------
 
-> • 2021 YLA - Environmental Club. Coded by Matias La Mota | Logo by Sebastián Heras. Made with ♥
+> - 2021 YLA - Environmental Club. Coded by Matias La Mota | Logo by Sebastián Heras. Made with ♥

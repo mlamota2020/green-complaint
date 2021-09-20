@@ -16,7 +16,7 @@ function createWindow() {
   });
 
   mainWindow.loadURL('http://localhost:4000');
-
+  mainWindow.maximize();
 }
 
 app.whenReady().then(() => {

@@ -9,7 +9,6 @@ const passport = require('passport');
 const mongoose = require("mongoose");
 const handlebars = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
-
 const { createAdminUser } = require("./libs/adminUser");
 
 // Initializations
