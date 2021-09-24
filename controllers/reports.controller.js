@@ -44,8 +44,9 @@ reportsCTRL.solveReport = async (req, res) => {
 }
 /** Use of a DELETE HTTP method with method-override to solve reports. */
 reportsCTRL.deleteReport = async (req, res) => {
-    await ResolvedReport.findOneAndDelete(req.params);
+    await ResolvedReport.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'The report has been deleted.');
+    res.redirect('/reports/resolved');
 }
 
 /** Get the marked as resolved reports and show it in a view. */
