@@ -34,7 +34,7 @@ With `npm start`, Green Complaint will start the server at [`localhost:4000`](ht
 
 `npm run dev` starts a development server powered by Nodemon by restarting it for you when you do changes. To work correctly, you need to run in another console `npm run build-css` to create the styles.
 
-#### 3.- `npm run build`
+#### 3.- `npm run build-app`
 
 Packages the app in a 'build' folder for Windows (in 64 bits only, sorry 32 bits users :( ), macOS and Linux. You need to do it with admin privileges to create for all the platforms. If you want to build for a specific OS, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
 ## Downloads
