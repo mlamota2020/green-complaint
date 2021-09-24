@@ -31,34 +31,25 @@
             </a>
         </div>
     </div>
-    <div class="pt-10 ml-32 content">
-      {{#if reports}}
-         <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">Reports</h1>
-      {{/if}}
+    <div id="content">
       <!-- Reports  -->
-      {{#each reports}}
-      <div id="reports" class="flex flex-col justify-center gap-10">
-            <!-- Reports -->
-            <div class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl">
-                <div class="flex items-center justify-between p-4 bg-gray-200 rounded-t-lg header">
-                    <h1 class="text-2xl font-semibold">{{title}}</h1>
-                    <a href="/reports/edit/{{id}}" class="inline-block p-2 text-green-500 bg-gray-50 rounded-xl"><i class="bi bi-pencil"></i> Edit</a>
-                    <form action="/reports/delete/{{id}}?_method=DELETE" method="POST">
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" href="/reports/delete/{{id}}" class="inline-block p-2 text-white bg-green-500 rounded-xl">Mark as resolved</button>
-                    </form>
-                </div>
-                <div class="px-4 rounded-b-lg py-7 report-content">
-                    <p class="text-gray-500" id="report">{{report}}</p>
-                    <p class="mt-5 text-center">Created by <span class="text-green-500"><img src="https://avatars.dicebear.com/api/initials/{{person_name}}.svg" class="inline-block w-7 h-7" alt="User Icon"> {{person_name}}</span></p>
-                    <p class="mt-5 text-center">Created at <span class="text-green-500">{{createdAt}}</span></p>
-                </div>
+       <div id="reports" class="flex items-center justify-center min-h-screen">
+            <div class="flex flex-col items-center justify-center w-full min-h-screen pl-32 bg-white divide-y divide-gray-500 all-reports">
+                {{#each reports}}
+                    {{#if reports}}
+                        <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">Reports</h1>
+                    {{/if}}
+                    <a class="p-10 report hover:shadow-lg" href="/reports/show/{{id}}">
+                        <h6 class="text-lg font-bold">{{title}}</h6>
+                        <p class="max-w-sm overflow-hidden text-gray-500 overflow-ellipsis whitespace-nowrap">{{report}}</p>
+                    </a>
+                    {{else}}
+                    <p class="text-gray-500">There aren't reports :(</p>
+                {{/each}}
             </div>
-            {{else}}
-          <p class="text-center text-black">No reports :( please <a href="/reports/add" class="inline-block text-green-500 underline">create one!</a></p>
-      {{/each}}
+        </div>
     </div>
-</div></div>
+</div>
 <script>
 const report = document.querySelector('#report');
 const readMore = document.querySelector('#readMore');

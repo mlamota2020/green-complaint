@@ -1,5 +1,7 @@
 # Green Complaint | Report enviroment problems
 
+[![run on repl.it](https://repl.it/badge/github/mlamota2020/green-complaint)](https://repl.it/github/mlamota2020/green-complaint)
+
 If you see any issues, such as items being recycled the wrong way, say it on **Green Complaint**! Feel free to come and report the issue. Add the necessary data so that something can be done about it. You can also see reports from other people and support the environment. 
 
 ## Features
@@ -28,9 +30,9 @@ There are some scripts for development and production.
 
 With `npm start`, Green Complaint will start the server at [`localhost:4000`](http://localhost:4000).
 
-#### 2.- `npm run dev`
+#### 2.- `npm run dev` and `npm run build-css`
 
-`npm run dev` starts a development server powered by Nodemon by restarting it for you when you do changes.
+`npm run dev` starts a development server powered by Nodemon by restarting it for you when you do changes. To work correctly, you need to run in another console `npm run build-css` to create the styles.
 
 #### 3.- `npm run build`
 

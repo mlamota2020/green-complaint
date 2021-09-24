@@ -4,6 +4,23 @@ All notable changes will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2021-9-24
+
+### Added
+
+- A new view for reports.
+- Now using Tailwind's JIT (just-in-time) mode!
+- Restored reports can't be deleted, but now the answer is _**yes**_.
+- Better SEO for the favicon, manifest etc...
+
+### Changed
+
+- Tailwind compiler.
+
+### Removed 
+- Previous Tailwind mode to use.
+- Very large files (like very large CSS).
+
 ## [2.0.0] - 2021-9-18
 
 Second generation. Is here.

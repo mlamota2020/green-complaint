@@ -1,6 +1,6 @@
 {
   "name": "green-complaint",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Report environment problems",
   "main": "main.js",
   "dependencies": {
@@ -89,7 +89,8 @@
     "yauzl": "^2.10.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.3.5",
     "dotenv": "^10.0.0",
     "electron": "^13.2.2",
     "nodemon": "^2.0.12",
@@ -98,7 +99,8 @@
   },
   "scripts": {
     "test": "echo Ready!",
-    "dev": "nodemon app.js && chrome http://localhost:4000/",
+    "dev": "nodemon app.js",
+    "build-css": "npx tailwindcss -o tailwind.css --watch",
     "start": "node app.js",
     "app": "electron .",
     "build": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=build && electron-packager . green-complaint --overwrite --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --prune=true --out=build --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\" && electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=build",
@@ -106,7 +108,15 @@
     "build-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=build",
     "build-linux": "electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=public/icons/1024x1024.png --prune=true --out=build"
   },
-  "keywords": ["green", "complaint", "environment", "yla", "young", "living", "academy"],
+  "keywords": [
+    "green",
+    "complaint",
+    "environment",
+    "yla",
+    "young",
+    "living",
+    "academy"
+  ],
   "author": "Environment Club - YLA",
   "license": "CC0 1.0 Universal"
 }

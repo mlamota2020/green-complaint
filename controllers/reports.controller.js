@@ -33,8 +33,8 @@ reportsCTRL.editReport = async (req, res) => {
     req.flash('success_msg', 'Report edited successfully');
     res.redirect('/reports');
 }
-/** Use of a DELETE HTTP method with method-override to delete reports. */
-reportsCTRL.deleteReport = async (req, res) => {
+/** Use of a DELETE HTTP method with method-override to solve reports. */
+reportsCTRL.solveReport = async (req, res) => {
     const { person_name, title, report, state } = await Report.findById(req.params.id);
     const markReportAsResolved = new ResolvedReport({ person_name, title, report, state });
     await markReportAsResolved.save();
@@ -42,6 +42,12 @@ reportsCTRL.deleteReport = async (req, res) => {
     req.flash('success_msg', 'The report has been marked as resolved.');
     res.redirect('/reports');
 }
+/** Use of a DELETE HTTP method with method-override to solve reports. */
+reportsCTRL.deleteReport = async (req, res) => {
+    await ResolvedReport.findOneAndDelete(req.params);
+    req.flash('success_msg', 'The report has been deleted.');
+}
+
 /** Get the marked as resolved reports and show it in a view. */
 reportsCTRL.renderResolvedReports = async (req, res) => {
     const resolvedReports = await ResolvedReport.find().sort({'createdAt': -1});
@@ -55,6 +61,11 @@ reportsCTRL.restoreReport = async (req, res) => {
     await ResolvedReport.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'The report has been restored.');
     res.redirect('/reports');
+}
+
+reportsCTRL.renderFullReport = async (req, res) => {
+    const fullReport = await Report.findOne(req.params);
+    res.render('reports/full-report', { fullReport });
 }
 
 module.exports = reportsCTRL;

@@ -46,6 +46,10 @@
                     <input type="hidden" name="_method" value="PUT">
                     <button type="submit" class="inline-block p-2 text-green-500 bg-gray-50 rounded-xl"><i class="bi bi-cloud-arrow-down"></i> Restore</button>
                     </form>
+                    <form action="/reports/delete/{{id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="inline-block p-2 text-white bg-red-500 rounded-xl">Delete permanently</button>
+                    </form>
                 </div>
                 <div class="px-4 rounded-b-lg py-7 report-content">
                     <p class="text-gray-500" id="report">{{report}}</p>
