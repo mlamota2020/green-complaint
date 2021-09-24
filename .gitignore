@@ -4,9 +4,6 @@ node_modules
 # Build folder
 build
 
-# Builded CSS
-build.css
-
 # VS Code Workspace
 Green Complaint -.code-workspace
 
