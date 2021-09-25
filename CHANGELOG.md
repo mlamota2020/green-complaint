@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Previous Tailwind mode to use.
 - Very large files (like very large CSS).
 
+---
+
 ## [2.0.0] - 2021-9-18
 
 Second generation. Is here.
@@ -40,6 +42,8 @@ Second generation. Is here.
 
 - Deleted bootstrap from the dependencies.
 - Unused views.
+
+---
 
 ## [1.4.0] - 2021-09-03 (ok three versions in one day)
 
