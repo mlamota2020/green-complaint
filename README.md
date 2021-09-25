@@ -39,7 +39,7 @@ With `npm start`, Green Complaint will start the server at [`localhost:4000`](ht
 Packages the app in a 'build' folder for Windows (in 64 bits only, sorry 32 bits users :( ), macOS and Linux. You need to do it with admin privileges to create for all the platforms. If you want to build for a specific OS, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
 ## Downloads
 
-You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.mlamota2020.repl.co).
+You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.herokuapp.com/).
 
 ## FAQs
 
