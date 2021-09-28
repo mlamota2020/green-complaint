@@ -1,9 +1,9 @@
 const User = require("./../models/User");
 /** Create an admin's user for developing. */
 const createAdminUser = async () => {
-  const userFound = await User.findOne({ email: "admin@localhost" });
+  const adminUser = await User.findOne({ email: "admin@localhost" });
 
-  if (userFound) return;
+  if (adminUser) return;
 
   const newUser = new User({
     name: "admin",
@@ -14,7 +14,7 @@ const createAdminUser = async () => {
 
   const admin = await newUser.save();
 
-  console.log("Admin user created!", admin);
+  console.log("Admin user has been deleted or corrupted. Another account has been created:", admin);
 };
 
 module.exports = { createAdminUser };
