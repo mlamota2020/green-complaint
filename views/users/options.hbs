@@ -47,32 +47,32 @@ body {
 </style>
 </head>
 <body>
-  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow navbar-expand">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home">Green Complaint</a>
+  <header class="p-0 shadow navbar navbar-dark sticky-top bg-dark flex-md-nowrap navbar-expand">
+  <a class="px-3 navbar-brand col-md-3 col-lg-2 me-0" href="/home">Green Complaint</a>
   </button>
   <div class="navbar-nav ms-auto">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="/users/logout">Sign out</a>
+      <a class="px-3 nav-link" href="/users/logout">Sign out</a>
     </div>
   </div>
 </header>
 
 <div class="container-fluid">
-    <div class="position-fixed start-0 bottom-0 p-3">
-      <div class="bg-light p-3 rounded-pill shadow-lg border">
+    <div class="bottom-0 p-3 position-fixed start-0">
+      <div class="p-3 border shadow-lg bg-light rounded-pill">
         <a href="/home" class="link-dark"><i class="bi bi-house-door"></i> Go to home page</a>
       </div>
     </div>
 
     <main class="ms-sm-auto px-md-4">
-      <div class="main my-5">
+      <div class="my-5 main">
         <h1 class="h1 fw-bolder">Options</h1>
         </div>
         <div class="my-4 w-100 row align-items-center jusitfy-content-center h-100">
             <div class="col-md-8">
-              <h1 class="fw-bolder my-4">Profile</h1>
-                <h1 id="profile"><span class="fw-light">Name: </span>{{userData.name}}</h1>
-                <small class="text-muted"><span class="fw-light">Email: </span>{{userData.email}}</small>
+              <h1 class="my-4 fw-bolder">Profile</h1>
+                <h1 id="profile"><span class="fw-light">Name: </span>{{user.name}}</h1>
+                <small class="text-muted"><span class="fw-light">Email: </span>{{user.email}}</small>
             </div>
             <div class="col-md-4">
                 &nbsp;  
@@ -80,11 +80,11 @@ body {
         </div>
         <div class="my-4 w-100 row align-items-center jusitfy-content-center h-100">
             <div class="col-md-8">
-              <h1 id="delete" class="fw-bolder my-4">Delete account</h1>
-              <form action="/users/options/deleteaccount/{{userData.id}}?_method=DELETE" method="POST">
+              <h1 id="delete" class="my-4 fw-bolder">Delete account</h1>
+              <form action="/users/options/deleteaccount/{{user.id}}?_method=DELETE" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn btn-outline-danger">Delete account</button>
-              <small class="text-muted d-block mt-1">(Ok this is the 3rd time i'll say this...) <strong>NO HOLDING BACK!!!!!!!!!</strong></small>
+              <small class="mt-1 text-muted d-block">(Ok this is the 3rd time i'll say this...) <strong>NO HOLDING BACK!!!!!!!!!</strong></small>
               </form>
               </div>
             <div class="col-md-4">
