@@ -2,7 +2,7 @@
 name: Help issue
 about: Don't know what to do? Ask your doubt
 title: "[DOUBT]"
-labels: ''
+labels: help
 assignees: mlamota2020
 
 ---
