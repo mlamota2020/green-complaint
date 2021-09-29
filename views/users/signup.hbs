@@ -1,11 +1,11 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-300">
-<div class="p-6 text-center bg-white rounded-lg shadow-xl dark:bg-gray-700 md:p-10">
-    <h3 class="mb-10 text-2xl font-bold dark:text-white">Register a new account</h3>
+<div class="p-6 text-center bg-white rounded-lg shadow-xl md:p-10">
+    <h3 class="mb-10 text-2xl font-bold">Register a new account</h3>
     <form action="/users/signup" method="POST" class="flex flex-col items-center justify-center">
-      <input class="p-3 rounded-lg border border-gray-200 dark:border-gray-500 dark:bg-gray-600 inline-block mb-4 focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="name" value={{name}}>
-      <input class="p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2" type="email" placeholder="Your e-mail" name="email" value={{email}}>
-      <input class="p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2" type="password" placeholder="Your password" name="password" value="{{password}}">
-      <input class="p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2" type="password" placeholder="Confirm password" name="confirm_password">
-      <button class="px-4 py-2 bg-green-600 rounded-lg text-white">Register account</button>
-      <span class="text-gray-500 text-md text-center mt-2">Already have an account? <a href="/users/signin" class="text-green-500">Log-in</a>.</span>
+      <input class="inline-block p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="name" value={{name}}>
+      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="email" placeholder="Your e-mail" name="email" value={{email}}>
+      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="password" placeholder="Your password" name="password" value="{{password}}">
+      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="password" placeholder="Confirm password" name="confirm_password">
+      <button class="px-4 py-2 text-white bg-green-600 rounded-lg">Register account</button>
+      <span class="mt-2 text-center text-gray-500 text-md">Already have an account? <a href="/users/signin" class="text-green-500">Log-in</a>.</span>
   </form></div></div>

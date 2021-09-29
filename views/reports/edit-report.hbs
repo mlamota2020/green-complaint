@@ -32,14 +32,14 @@
         </div>
     </div>
     <div class="flex items-center justify-center pt-10 ml-32 content">
-<div class="p-6 text-center bg-white rounded-lg shadow-xl dark:bg-gray-700 md:p-10">
-    <h3 class="mb-10 text-2xl font-bold dark:text-white">Edit report</h3>
+<div class="p-6 text-center bg-white rounded-lg shadow-xl md:p-10">
+    <h3 class="mb-10 text-2xl font-bold">Edit report</h3>
     <form action="/reports/edit/{{report.id}}?_method=PUT" method="POST" class="flex flex-col items-center justify-center">
     <input type="hidden" name="_method" value="PUT">
-      <input class="inline-block p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="person_name" value={{report.person_name}} readonly>
-      <input class="p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your title" name="title" value={{report.title}}>
-      <textarea name="report" class="w-full p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2">{{report.report}}</textarea>
-      <select name="state" class="w-full p-3 mb-4 border border-gray-200 rounded-lg dark:border-gray-500 dark:bg-gray-600 focus:border-green-600 focus:border-4 hover:border-2">
+      <input class="inline-block p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="person_name" value={{report.person_name}} readonly>
+      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your title" name="title" value={{report.title}}>
+      <textarea name="report" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2">{{report.report}}</textarea>
+      <select name="state" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2">
         <option value="null" disabled selected>...</option>
         <option value="Now the community is fixing the situation.">In progress</option>
         <option value="This is very dangerous for the environment!! PLEASE! HELP!">Dangerous</option>
