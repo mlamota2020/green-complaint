@@ -34,7 +34,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id:possibe-error
+    id: posible-error
     attributes:
       label: Have you seen an error?
       description: If you're requesting this feature beacuse of an error. Tell us that error.
