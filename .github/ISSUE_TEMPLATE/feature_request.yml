@@ -39,7 +39,7 @@ body:
       label: Have you seen an error?
       description: If you're requesting this feature beacuse of an error. Tell us that error.
       placeholder: I've seen this at...
-     validations:
+    validations:
       required: false
   - type: checkboxes
     id: terms
