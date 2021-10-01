@@ -619,6 +619,10 @@ video {
   position: fixed;
 }
 
+.relative {
+  position: relative;
+}
+
 .top-10 {
   top: 2.5rem;
 }
@@ -723,6 +727,22 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-\[80\%\] {
+  margin-top: 80%;
+}
+
+.mt-\[90\%\] {
+  margin-top: 90%;
+}
+
+.mt-\[130\%\] {
+  margin-top: 130%;
+}
+
+.mt-\[240\%\] {
+  margin-top: 240%;
 }
 
 .block {
@@ -1140,6 +1160,62 @@ video {
   transition-duration: 150ms;
 }
 
+.before\:absolute::before {
+  content: "";
+  position: absolute;
+}
+
+.before\:left-0::before {
+  content: "";
+  left: 0px;
+}
+
+.before\:top-0::before {
+  content: "";
+  top: 0px;
+}
+
+.before\:left-3::before {
+  content: "";
+  left: 0.75rem;
+}
+
+.before\:top-3::before {
+  content: "";
+  top: 0.75rem;
+}
+
+.before\:h-full::before {
+  content: "";
+  height: 100%;
+}
+
+.before\:h-3\/4::before {
+  content: "";
+  height: 75%;
+}
+
+.before\:w-1::before {
+  content: "";
+  width: 0.25rem;
+}
+
+.before\:rounded-md::before {
+  content: "";
+  border-radius: 0.375rem;
+}
+
+.before\:rounded-lg::before {
+  content: "";
+  border-radius: 0.5rem;
+}
+
+.before\:bg-green-500::before {
+  content: "";
+  --tw-bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+
 .hover\:-translate-y-3:hover {
   --tw-translate-y: -0.75rem;
   transform: var(--tw-transform);
@@ -1181,45 +1257,6 @@ video {
 .focus\:border-green-600:focus {
   --tw-border-opacity: 1;
   border-color: rgba(5, 150, 105, var(--tw-border-opacity));
-}
-
-.dark .dark\:border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgba(107, 114, 128, var(--tw-border-opacity));
-}
-
-.dark .dark\:bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-green-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(4, 120, 87, var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-opacity-25 {
-  --tw-bg-opacity: 0.25;
-}
-
-.dark .dark\:text-white {
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
-.dark .dark\:text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {

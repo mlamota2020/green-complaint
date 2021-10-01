@@ -1,6 +1,6 @@
 {
   "name": "green-complaint",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Report environment problems",
   "main": "main.js",
   "dependencies": {
@@ -100,7 +100,7 @@
   "scripts": {
     "test": "echo Ready!",
     "dev": "nodemon app.js",
-    "build-css": "npx tailwindcss -o tailwind.css --watch",
+    "build-css": "npx tailwindcss -o public/css/build.css --watch",
     "start": "node app.js",
     "app": "electron .",
     "build-app": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/icons/icon.icns --prune=true --out=build && electron-packager . green-complaint --overwrite --platform=win32 --arch=x64 --icon=public/icons/favicon.ico --prune=true --out=build --version-string.CompanyName=Environment Club --version-string.FileDescription=Report Environment Problems --version-string.ProductName=\"Green Complaint | Report Environment Problems\" && electron-packager . green-complaint--overwrite --platform=linux --arch=x64 --icon=assets/icons/1024x1024.png --prune=true --out=build",
@@ -118,5 +118,5 @@
     "academy"
   ],
   "author": "Environment Club - YLA",
-  "license": "CC0 1.0 Universal"
+  "license": "MIT"
 }
