@@ -50,9 +50,7 @@ usersCTRL.signIn = passport.authenticate('local', {
     successRedirect: '/home',
     failureFlash: true,
     successFlash: true
-}), () => {
-    req.flash('success_msg', `Hey ${user.name}!`)
-};
+});
 /** Log-out the user. */
 usersCTRL.logOut = (req, res) => {
     req.logout();
@@ -67,8 +65,7 @@ usersCTRL.changeAccount = (req, res) => {
 }
 /** Render user options */
 usersCTRL.renderUserOptions = async (req, res) => {
-    const userData = await User.findOne(req.params);
-    res.render('users/options', { userData, layout: false });
+    res.render('users/options', { layout: false });
 }
 /** Delete user account. */
 usersCTRL.deleteAccount = async (req, res) => {
