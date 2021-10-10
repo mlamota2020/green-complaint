@@ -2,7 +2,6 @@ const { Router } = require('express');
 const router = Router();
 const { logOut, renderSignInForm, renderSignUpForm, signIn, signUp, changeAccount, renderUserOptions, deleteAccount } = require('./../controllers/users.controller');
 const { isAuthenticated, isLoggedIn } = require('./../helpers/auth');
-const { controlUserTraffic } = require('./../api/client/usercontrol');
 
 router.get('/users/signup', isLoggedIn, renderSignUpForm);
 
