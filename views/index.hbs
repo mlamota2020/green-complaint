@@ -1,32 +1,54 @@
-<div class="flex flex-col items-center justify-center px-16 m-6 space-y-6 text-center text-white bg-green-400 shadow-xl hero rounded-xl" style="min-height: 90vh;">
-      <h1 class="text-3xl font-bold md:text-5xl">Help the environment with your reports.</h1>
-      <p class="text-md md:text-lg">Create reports to help to the community and the environment to create a better world.</p>
-      <div class="flex-row">
-        <a class="inline-block px-4 py-2 mb-4 ml-8 font-medium text-green-900 transform bg-white rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Start now
-            </a>
+<div class="min-h-screen overflow-hidden wrapper">
+  <header class="flex items-center justify-center !text-center presentation min-h-screen flex-col overflow-hidden">
+    <video src="/media/index-video-presentation.mp4" class="absolute top-0 left-0 object-cover w-full h-full" autoplay loop muted style="z-index: -1;"></video>
+    <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+    Lorem ipsum dolor sit amet consectetur.
+  </h1>
+  <p class="mb-5 text-white">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veniam doloremque architecto quasi explicabo minima optio quaerat commodi nemo natus nam similique, magni eligendi deserunt reprehenderit odio libero alias.
+  </p>
+  <a href="/users/signin" class="inline-block px-6 py-3 text-transparent shadow-xl rounded-xl" style="background: url(/media/hero-index-button.png) no-repeat center;">
+    Start now &rarr;
+  </a>
+  </header>
+  <div class="w-11/12 mx-auto">
+  <div class="flex items-center justify-center mt-10 gap-x-10 content-1">
+    <div class="flex-auto left content">
+      <h1 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quo dolorum nam! Est unde hic laudantium, deleniti cupiditate esse eaque aut repudiandae doloribus culpa ab eveniet quam officiis, ipsum eos odio in amet qui et incidunt libero necessitatibus nobis sequi ut? Rerum ipsum qui dolorem tempore architecto quam deserunt odio.</p>
+    </div>
+      <div class="flex-auto right image">
+          <img src="/media/index-image-1.jpg" alt="Mangla image" class="object-cover parallax-image w-80 h-80 rounded-xl" loading="lazy">
       </div>
+  </div>
+  <div class="flex items-center justify-center mt-10 gap-x-10 content-2">
+    <div class="flex-auto left content image">
+          <img src="/media/index-image-2.jpg" alt="Mangla image" class="object-cover parallax-image image-2 w-80 h-80 rounded-xl" loading="lazy">
     </div>
-    <div class="flex flex-col items-center justify-between mx-6 my-16 text-center md:flex-row">
-      <div class="space-y-4 features">
-        <div class="inline-block p-3 bg-green-600 shadow-lg rounded-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-</svg>
-        </div>
-        <h1 class="text-xl font-extrabold md:text-5xl">
-          Create reports and help to the environment.
-        </h1>
-        <p class="text-lg text-gray-700 md:text-xl">By creating your reports, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.</p>
-        <a class="inline-block px-4 py-2 mb-4 font-medium text-center text-white transform bg-green-500 rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Start now
-            </a>
+      <div class="flex-auto text-right right">
+      <h1 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quo dolorum nam! Est unde hic laudantium, deleniti cupiditate esse eaque aut repudiandae doloribus culpa ab eveniet quam officiis, ipsum eos odio in amet qui et incidunt libero necessitatibus nobis sequi ut? Rerum ipsum qui dolorem tempore architecto quam deserunt odio.</p>
       </div>
+  </div>
+  <div class="my-10 space-y-5 testimonials">
+    <h1 class="mt-10 text-2xl font-extrabold tracking-tight text-center sm:text-4xl lg:text-5xl">The team that brings to life Green Complaint.</h1>
+  </div>
+  </div>
+</div>
+<footer class="flex items-center justify-between w-screen text-gray-500 bg-gray-100 p-14 footer-index">
+  <div class="logo">
+    <img src="/icons/logo-black.png" alt="Logo" class="inline-block w-10">
+    <span class="inline-block">&nbsp;Green Complaint</span>
+  </div>
+    <div class="copyright">
+      <span>© 2021 - Environmental Club - <a href="https://younglivingacademy.edu.ec/">Young Living Academy</a></span>
     </div>
-     <div class="flex flex-col items-center justify-center min-h-screen space-y-4 bg-green-500 bg-opacity-25 py-14 mt-14">
-                <h1 class="text-3xl font-bold md:text-4xl lg:text-6xl">Ready to help?</h1>
-                <a class="inline-block px-4 py-2 mb-4 font-medium text-center text-white transform bg-green-500 rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Get started
-            </a>
-            </div>
-    </div>
+  </footer>
+  <script>
+    const images = document.querySelectorAll('.parallax-image');
+    new simpleParallax(images, {
+      scale: 1.5,
+      overflow: true,
+      interval: 5
+    });
+  </script>

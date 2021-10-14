@@ -4,27 +4,27 @@
         <div class="flex flex-col items-center justify-center">
             <ul>
                 <li>
-                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-house-door"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/reports" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-flag"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-check"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports/add" class="relative inline-block px-6 py-3 text-3xl text-green-500 before:absolute before:h-3/4 before:w-1 before:rounded-lg before:left-3 before:top-3 before:bg-green-500">
+                    <a href="/reports/add" class="relative inline-block px-6 py-3 text-3xl text-teal-500 before:absolute before:h-3/4 before:w-1 before:rounded-lg before:left-3 before:top-3 before:bg-teal-500">
                         <i class="bi bi-plus"></i>
                     </a>
                 </li>
             </ul>
-            <a class="inline-block px-6 py-3 mt-44 hover:text-green-500 user-options" href="/users/options/{{user.id}}">
+            <a class="inline-block px-6 py-3 mt-44 hover:text-teal-500 user-options" href="/users/options/{{user.id}}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0   110-2 1 1 0 010 2z" />
                 </svg>
@@ -35,14 +35,14 @@
 <div class="p-6 text-center bg-white rounded-lg shadow-xl md:p-10">
     <h3 class="mb-10 text-2xl font-bold">Create a new report</h3>
     <form action="/reports/add" method="POST" class="flex flex-col items-center justify-center">
-      <input class="inline-block p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="person_name" value={{user.name}} readonly>
-      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" type="text" placeholder="Your title" name="title" value={{title}}>
-      <textarea name="report" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2" value={{report}}></textarea>
-      <select name="state" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-green-600 focus:border-4 hover:border-2">
+      <input class="inline-block p-3 mb-4 border border-gray-200 rounded-lg focus:border-teal-600 focus:border-4 hover:border-2" type="text" placeholder="Your full-name" name="person_name" value={{user.name}} readonly>
+      <input class="p-3 mb-4 border border-gray-200 rounded-lg focus:border-teal-600 focus:border-4 hover:border-2" type="text" placeholder="Your title" name="title" value={{title}}>
+      <textarea name="report" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-teal-600 focus:border-4 hover:border-2" value={{report}}></textarea>
+      <select name="state" class="w-full p-3 mb-4 border border-gray-200 rounded-lg focus:border-teal-600 focus:border-4 hover:border-2">
         <option value="null" disabled selected>...</option>
         <option value="Now the community is fixing the situation.">In progress</option>
         <option value="This is very dangerous for the environment!! PLEASE! HELP!">Dangerous</option>
         <option value="This is new and not very dangerous. Don't panic...">New report</option>
       </select>
-      <button class="px-4 py-2 text-white bg-green-600 rounded-lg">Create report</button>
+      <button class="px-4 py-2 text-white bg-teal-500 rounded-lg">Create report</button>
   </form></div></div></div>

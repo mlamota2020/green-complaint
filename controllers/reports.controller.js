@@ -1,6 +1,7 @@
 const reportsCTRL = {};
 const Report = require('./../models/Report');
 const ResolvedReport = require('./../models/ResolvedReport');
+const moment = require('moment');
 
 /** Render the view to create reports. */
 reportsCTRL.renderReportForm = (req, res) => {
@@ -66,7 +67,9 @@ reportsCTRL.restoreReport = async (req, res) => {
 
 reportsCTRL.renderFullReport = async (req, res) => {
     const fullReport = await Report.findOne(req.params);
-    res.render('reports/full-report', { fullReport });
+    const date = await Report.findOne(req.params);
+    const formattedDate = moment(date.createdAt).format('lll');
+    res.render('reports/full-report', { fullReport, formattedDate });
 }
 
 module.exports = reportsCTRL;

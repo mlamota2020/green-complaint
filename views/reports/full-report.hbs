@@ -4,27 +4,27 @@
         <div class="flex flex-col items-center justify-center">
             <ul>
                 <li>
-                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-house-door"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports" class="relative inline-block px-6 py-3 text-3xl text-green-500 before:absolute before:h-3/4 before:w-1 before:rounded-lg before:left-3 before:top-3 before:bg-green-500">
+                    <a href="/reports" class="relative inline-block px-6 py-3 text-3xl text-teal-500 before:absolute before:h-3/4 before:w-1 before:rounded-lg before:left-3 before:top-3 before:bg-teal-500">
                         <i class="bi bi-flag"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-check"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/reports/add" class="inline-block px-6 py-3 text-3xl hover:text-green-500">
+                    <a href="/reports/add" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
                         <i class="bi bi-plus"></i>
                     </a>
                 </li>
             </ul>
-            <a class="inline-block px-6 py-3 mt-44 hover:text-green-500 user-options" href="/users/options/{{user.id}}">
+            <a class="inline-block px-6 py-3 mt-44 hover:text-teal-500 user-options" href="/users/options/{{user.id}}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0   110-2 1 1 0 010 2z" />
                 </svg>
@@ -38,15 +38,16 @@
                 <div class="w-full p-10 space-y-4 report">
                     <div class="flex items-center justify-between header">
                     <h1 class="text-2xl font-semibold">{{fullReport.title}}</h1>
-                    <a href="/reports/edit/{{fullReport.id}}" class="inline-block p-2 text-green-500 bg-gray-50 rounded-xl"><i class="bi bi-pencil"></i> Edit</a>
+                    <span class="inline-block text-gray-500 font-base">{{formattedDate}}</span>
+                    <a href="/reports/edit/{{fullReport.id}}" class="inline-block p-2 text-teal-500 bg-gray-50 rounded-xl"><i class="bi bi-pencil"></i> Edit</a>
                     <form action="/reports/solve/{{fullReport.id}}?_method=DELETE" method="POST">
                       <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="inline-block p-2 text-white bg-green-500 rounded-xl">Mark as resolved</button>
+                      <button type="submit" class="inline-block p-2 text-white bg-teal-500 rounded-xl">Mark as resolved</button>
                     </form>
                 </div>
                 <hr class="border-0 border-b border-gray-500">
                     <p class="text-gray-500">{{fullReport.report}}</p>
-                    <a href="/reports" class="fixed p-4 text-green-500 transform bg-white rounded-full shadow-lg bottom-4 right-4 hover:shadow-xl hover:-translate-y-3"> Go back</a>
+                    <a href="/reports" class="fixed p-4 text-teal-500 transform bg-white rounded-full shadow-lg bottom-4 right-4 hover:shadow-xl hover:-translate-y-3"> Go back</a>
                 </div>
             </div>
         </div>

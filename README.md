@@ -14,7 +14,7 @@ If you see any issues, such as items being recycled the wrong way, say it on **G
 
 ## Install in your local environment
 
-Want to create your own? Or contribute? Perfect. To install Green Complaint on your desktop first you need clone the repo, install all the dependencies, and run.
+Want to create your own? Or contribute? Perfect. Before, please read the [contributing guidelines](.github/CONTRIBUTING.md). To install Green Complaint on your desktop first you need clone the repo, install all the dependencies, and run.
 
 ```bash
 $ git clone https://github.com/mlamota2020/green-complaint.git
@@ -36,10 +36,7 @@ With `npm start`, Green Complaint will start the server at [`localhost:4000`](ht
 
 #### 3.- `npm run build-app`
 
-Packages the app in a 'build' folder for Windows (in 64 bits only, sorry 32 bits users :( ), macOS and Linux. You need to do it with admin privileges to create for all the platforms. If you want to build for a specific OS, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
-## Downloads
-
-You want to use Green Complaint? No problem, you can download it [here](https://github.com/mlamota2020/green-complaint/releases), or use the [web version](https://green-complaint.herokuapp.com/).
+Packages the app in a 'build' folder for Windows (in 64 bits only, sorry 32 bits users), macOS and Linux. You need to do it with admin privileges to create for all the platforms. If you want to build for a specific OS, execute `npm run build-win`. For Mac, `npm run build-mac`. And for Linux, `npm run build-linux`.
 
 ## FAQs
 
@@ -49,7 +46,7 @@ Well, you can make changes and create a pull request with the commit. DON'T MAKE
 
 2. ### I'm a 32 bits Windows user and the app doesn't work
 
-The app is only for 64 bits Windows. Sorry for the inconveniences.
+The app is only for the 64 bits Windows version. Sorry for the inconveniences.
 
 3. ### I'm building the app for all platforms and it throw me an error saying that it can't wrote an app for 'x' platform. What do I do?
 
