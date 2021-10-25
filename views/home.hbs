@@ -3,10 +3,10 @@
         opacity: 1;
     }
 </style>
-<div class="relative min-h-screen bg-gray-100">
+<div class="relative min-h-screen bg-gray-50">
     <!-- Sidebar -->
     <div class="fixed z-50 top-10 left-5">
-        <div class="sidebar h-full w-[78px] bg-gradient-to-tl from-teal-500 via-teal-500 to-blue-400 fixed top-0 left-0 py-1.5 px-3.5" id="sidebar">
+        <div class="sidebar h-full w-[78px] bg-teal-900 fixed top-0 left-0 py-1.5 px-3.5" id="sidebar">
         <div class="logo_content">
         <div class="flex items-center w-full h-12 text-white opacity-0 pointer-events-none logo">
             <div class="mr-1 logo_icon w-7"><img src="/icons/logo-white.png" alt="Logo"></div>
@@ -20,28 +20,28 @@
         </div>
         <ul class="mt-5 nav_list">
             <li class="relative w-full group">
-                <a href="/home" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-500">
+                <a href="/home" class="flex items-center py-2 my-4 text-center text-teal-900 bg-white rounded-lg px-auto">
                     <i class="text-center rounded-lg bi bi-house-door icon leading-12"></i>
                     <span class="text-lg links_name">Home</span>
                 </a>
                 <span class="tooltip absolute h-[35px] w-[122px] bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Home</span>
             </li>
             <li class="relative w-full group">
-                <a href="/reports" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto whitespace-nowrap hover:bg-white hover:text-green-500">
+                <a href="/reports" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto whitespace-nowrap hover:bg-white hover:text-green-900">
                     <i class="text-center rounded-lg bi bi-flag icon leading-12"></i>
                     <span class="text-lg links_name">Reports</span>
                 </a>
                 <span class="tooltip absolute h-[35px] w-[122px] bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg leading-[35px] text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Reports</span>
             </li>
             <li class="relative w-full group">
-                <a href="/reports/resolved" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-500">
+                <a href="/reports/resolved" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-900">
                     <i class="text-center rounded-lg bi bi-check icon leading-12"></i>
                     <span class="text-lg links_name">Resolved reports</span>
                 </a>
                 <span class="tooltip absolute h-[35px] w-max px-2 bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg leading-[35px] text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Resolved reports</span>
             </li>
             <li class="relative w-full group">
-                <a href="/reports/add" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-500">
+                <a href="/reports/add" class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-900">
                     <i class="text-center rounded-lg bi bi-plus icon leading-12"></i>
                     <span class="text-lg links_name">Add report</span>
                 </a>
@@ -108,11 +108,3 @@
         </div>
     </div>
 </div>
-<script>
-    const btn = document.querySelector('#btn');
-    const sidebar = document.querySelector('.sidebar');
-
-    btn.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-    })
-</script>

@@ -1,8 +1,6 @@
 const reportsCTRL = {};
 const Report = require('./../models/Report');
 const ResolvedReport = require('./../models/ResolvedReport');
-const moment = require('moment');
-
 /** Render the view to create reports. */
 reportsCTRL.renderReportForm = (req, res) => {
     res.render('reports/new-report');
@@ -18,8 +16,10 @@ reportsCTRL.createNewReport = async (req, res) => {
 /** Catch all the reports in the database and show it in a view. */
 reportsCTRL.renderReports = async (req, res) => {
     const reports = await Report.find().sort({'updatedAt': -1});
-    res.render('reports/all-reports', { reports });
+    const comments = await Report.find().sort({'updatedAt': -1});
+    res.render('reports/all-reports', { reports, comments });
 }
+
 /** Use of a PUT HTTP method with method-override to edit reports. */
 
 reportsCTRL.renderEditReport = async (req, res) => {
@@ -63,13 +63,6 @@ reportsCTRL.restoreReport = async (req, res) => {
     await ResolvedReport.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'The report has been restored.');
     res.redirect('/reports');
-}
-
-reportsCTRL.renderFullReport = async (req, res) => {
-    const fullReport = await Report.findOne(req.params);
-    const date = await Report.findOne(req.params);
-    const formattedDate = moment(date.createdAt).format('lll');
-    res.render('reports/full-report', { fullReport, formattedDate });
 }
 
 module.exports = reportsCTRL;

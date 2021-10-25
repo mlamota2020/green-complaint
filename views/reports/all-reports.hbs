@@ -1,67 +1,140 @@
-<div class="min-h-screen bg-gray-100">
-  <!-- Sidebar -->
-    <div class="fixed bg-white shadow-xl rounded-xl top-10 left-5 h-3/4">
-        <div class="flex flex-col items-center justify-center">
-            <ul>
-                <li>
-                    <a href="/home" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
-                        <i class="bi bi-house-door"></i>
+<div class="min-h-screen bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed z-50 top-10 left-5">
+        <div class="sidebar h-full w-[78px] bg-teal-900 fixed top-0 left-0 py-1.5 px-3.5" id="sidebar">
+            <div class="logo_content">
+                <div class="flex items-center w-full h-12 text-white opacity-0 pointer-events-none logo">
+                    <div class="mr-1 logo_icon w-7"><img src="/icons/logo-white.png" alt="Logo"></div>
+                    <div class="text-lg font-medium logo_name">Green Complaint</div>
+                </div>
+                <button id="btn"
+                    class="text-white absolute right-0 top-1.5 text-lg h-12 w-12 text-center transform translate-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7">
+                    </svg>
+                </button>
+            </div>
+            <ul class="mt-5 nav_list">
+                <li class="relative w-full group">
+                    <a href="/home"
+                        class="flex items-center py-2 my-4 text-center text-white rounded-lg hover:text-teal-900 hover:bg-white px-auto">
+                        <i class="text-center rounded-lg bi bi-house-door icon leading-12"></i>
+                        <span class="text-lg links_name">Home</span>
                     </a>
+                    <span
+                        class="tooltip absolute h-[35px] w-[122px] bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Home</span>
                 </li>
-                <li>
-                    <a href="/reports" class="relative inline-block px-6 py-3 text-3xl text-teal-500 before:absolute before:h-3/4 before:w-1 before:rounded-lg before:left-3 before:top-3 before:bg-teal-500">
-                        <i class="bi bi-flag"></i>
+                <li class="relative w-full group">
+                    <a href="/reports"
+                        class="flex items-center py-2 my-4 text-center text-teal-900 bg-white rounded-lg px-auto whitespace-nowrap">
+                        <i class="text-center rounded-lg bi bi-flag icon leading-12"></i>
+                        <span class="text-lg links_name">Reports</span>
                     </a>
+                    <span
+                        class="tooltip absolute h-[35px] w-[122px] bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg leading-[35px] text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Reports</span>
                 </li>
-                <li>
-                    <a href="/reports/resolved" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
-                        <i class="bi bi-check"></i>
+                <li class="relative w-full group">
+                    <a href="/reports/resolved"
+                        class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-900">
+                        <i class="text-center rounded-lg bi bi-check icon leading-12"></i>
+                        <span class="text-lg links_name">Resolved reports</span>
                     </a>
+                    <span
+                        class="tooltip absolute h-[35px] w-max px-2 bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg leading-[35px] text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Resolved
+                        reports</span>
                 </li>
-                <li>
-                    <a href="/reports/add" class="inline-block px-6 py-3 text-3xl hover:text-teal-500">
-                        <i class="bi bi-plus"></i>
+                <li class="relative w-full group">
+                    <a href="/reports/add"
+                        class="flex items-center py-2 my-4 text-center text-white rounded-lg px-auto hover:bg-white hover:text-green-900">
+                        <i class="text-center rounded-lg bi bi-plus icon leading-12"></i>
+                        <span class="text-lg links_name">Add report</span>
                     </a>
+                    <span
+                        class="tooltip absolute h-[35px] w-[122px] bg-white shadow-lg left-[60px] top-12 transform -translate-y-1/2 rounded-lg leading-[35px] text-center group-hover:top-1/2 transition-all opacity-0 pointer-events-none">Add
+                        report </span>
                 </li>
             </ul>
-            <a class="inline-block px-6 py-3 mt-44 hover:text-teal-500 user-options" href="/users/options/{{user.id}}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0   110-2 1 1 0 010 2z" />
-                </svg>
-            </a>
+            <div class="absolute bottom-0 left-0 w-full text-white profile_content">
+                <div class="profile relative py-[10px] px-[6px] h-13">
+                    <div class="flex items-center whitespace-nowrap profile_details">
+                        <img src="https://avatars.dicebear.com/api/initials/{{user.name}}.svg" alt="Profile image"
+                            class="h-[45px] w-[45px] object-cover rounded-lg">
+                        <div class="ml-3 name_user">
+                            <span class="text-base font-normal name">{{user.name}}</span>
+                            <div class="font-light email text-md">{{user.email}}</div>
+                        </div>
+                    </div>
+                    <a href="/users/options/{{user.id}}" id="options"
+                        class="absolute p-3 transform -translate-x-1/2 opacity-0 pointer-events-none left-3/4 bottom-2 min-w-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </a>
+                    <a href="/users/logout" id="log_out"
+                        class="absolute p-3 transform -translate-x-1/2 left-1/2 bottom-2 min-w-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="content">
-      <!-- Reports  -->
-       <div id="reports" class="flex items-center justify-center min-h-screen">
-            <div class="flex flex-col items-center justify-center w-full min-h-screen pl-32 bg-white divide-y divide-gray-500 all-reports">
-                {{#each reports}}
-                    {{#if reports}}
-                        <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">Reports</h1>
-                    {{/if}}
-                    <a class="p-10 report hover:shadow-lg" href="/reports/show/{{id}}">
-                        <h6 class="text-lg font-bold">{{title}}</h6>
-                        <p class="max-w-sm overflow-hidden text-gray-500 overflow-ellipsis whitespace-nowrap">{{report}}</p>
-                    </a>
-                    {{else}}
-                    <p class="text-gray-500">There aren't reports :(</p>
-                {{/each}}
+    <div class="pt-10 ml-32 content">
+        {{#if reports}}
+        <h1 class="mb-10 text-3xl font-bold text-semibold md:text-3xl">Reports</h1>
+        {{/if}}
+        <!-- Reports  -->
+        {{#each reports}}
+        <div id="reports" class="flex flex-col justify-center gap-10">
+            <!-- Reports -->
+            <div class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl"
+                href="/reports">
+                <div class="flex items-center justify-between p-4 bg-gray-100 rounded-t-lg header">
+                    <h1 class="text-2xl font-semibold">{{title}}</h1>
+                    <a href="/reports/edit/{{id}}" class="inline-block p-2 text-teal-500 bg-gray-100 rounded-xl"><i
+                            class="bi bi-pencil"></i> Edit</a>
+                    <form action="/reports/solve/{{id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="inline-block p-2 text-white bg-teal-500 rounded-xl"><i
+                                class="bi bi-check"></i> Mark as resolved</button>
+                    </form>
+                </div>
+                <div class="px-4 rounded-b-lg py-7 report-content bg-gray-50">
+                    <p class="text-gray-500" id="report">{{report}}</p>
+                    <span id="readMore"></span>
+                    <p class="mt-5 text-center">Created by <span class="text-teal-500"><img
+                                src="https://avatars.dicebear.com/api/initials/{{person_name}}.svg"
+                                class="inline-block w-7 h-7" alt="User Icon"> {{person_name}}</span></p>
+                    <p class="mt-5 text-center">Created at <span class="text-teal-500">{{createdAt}}</span></p>
+                </div>
             </div>
+            {{else}}
+            <p class="text-center text-black">No reports are here.</p>
+            {{/each}}
         </div>
     </div>
 </div>
 <script>
-const report = document.querySelector('#report');
-const readMore = document.querySelector('#readMore');
+    const report = document.querySelector('#report');
+    const readMore = document.querySelector('#readMore');
 
-if (report.innerText.length >= 400) {
-  report.classList.add('text-truncate');
-  report.setAttribute('style', 'max-width: 100%;')
-  readMore.innerHTML = `<span class="font-bold text-gray-500" id="expand">Read more...</span>`;
-}
+    if (report.innerText.length >= 400) {
+        report.classList.add('text-truncate');
+        report.setAttribute('style', 'max-width: 100%;')
+        readMore.innerHTML = `<span class="font-bold text-gray-500 cursor-pointer" id="expand">Read more...</span>`;
+    }
 
-readMore.addEventListener('click', () => {
-  report.classList.remove('text-truncate');
-  readMore.innerHTML = '';
-});
+    readMore.addEventListener('click', () => {
+        report.classList.remove('text-truncate');
+        readMore.innerHTML = '';
+    });
 </script>

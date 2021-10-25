@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Green Complaint">
@@ -49,11 +49,28 @@
 </main>
     <script src="/manifest/renderer.js"></script>
     <script>
-        ScrollReveal().reveal('.presentation', { reset: true });
-        ScrollReveal().reveal('.content-1', { delay: 500, reset: true });
-        ScrollReveal().reveal('.content-2', { delay: 500, reset: true });
-        ScrollReveal().reveal('.testimonials', { delay: 500, reset: true });
-        ScrollReveal().reveal('.footer-index', { delay: 500, reset: true });
+        ScrollReveal().reveal('.presentation');
+        ScrollReveal().reveal('.welcome', { delay: 250 });
+        ScrollReveal().reveal('.content-1', { delay: 250 });
+        ScrollReveal().reveal('.content-2', { delay: 250 });
+        ScrollReveal().reveal('.the-team', { delay: 250 });
+        ScrollReveal().reveal('.start', { delay: 250 });
     </script>
+    
+  <script>
+    const images = document.querySelectorAll('.parallax-image');
+    new simpleParallax(images, {
+      scale: 1.5,
+      overflow: true
+    });
+  </script>
+  <script>
+    const btn = document.querySelector('#btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    btn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    })
+</script>
 </body>
 </html>
