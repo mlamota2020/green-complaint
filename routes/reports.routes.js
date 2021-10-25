@@ -1,15 +1,13 @@
 const { Router } = require('express');
 const router = Router();
-const { renderReportForm, createNewReport, renderReports, deleteReport, solveReport, renderEditReport, editReport, renderResolvedReports, restoreReport, renderFullReport } = require('./../controllers/reports.controller');
-const { isAuthenticated, isLoggedIn } = require('./../helpers/auth');
+const { renderReportForm, createNewReport, renderReports, deleteReport, solveReport, renderEditReport, editReport, renderResolvedReports, restoreReport } = require('./../controllers/reports.controller');
+const { isAuthenticated } = require('./../helpers/auth');
 
 router.get('/reports/add', isAuthenticated, renderReportForm);
 
 router.post('/reports/add', isAuthenticated, createNewReport);
 
 router.get('/reports', isAuthenticated, renderReports);
-
-router.get('/reports/show/:id', isAuthenticated, renderFullReport);
 
 router.get('/reports/edit/:id', isAuthenticated, renderEditReport);
 

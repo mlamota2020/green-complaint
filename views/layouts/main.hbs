@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Green Complaint">
+    <link rel="canonical" href="https://green-complaint.herokuapp.com/">
     <meta name="description" content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
     <meta name="keywords" content="green, complaint, environment, yla, young, living, academy">
     <meta name="robots" content="index, follow">
@@ -19,24 +20,57 @@
     <meta property="twitter:url" content="https://green-complaint.herokuapp.com/">
     <meta property="twitter:title" content="Green Complaint | Report environment problems">
     <meta property="twitter:description" content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Green Complaint | Report enviroment problems</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png">
     <link rel="manifest" href="/manifest/site.webmanifest">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <link rel="shortcut icon" href="/icons/logo-green.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
     <meta name="msapplication-config" content="/manifest/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="green">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/build.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
 </head>
-<body>
+<body class="overflow-x-hidden">
   <main>
+      <noscript>
+          You need to have JavaScript or enable it to see the page correctly.
+      </noscript>
     {{>messages}}
     {{{body}}}
 </main>
     <script src="/manifest/renderer.js"></script>
+    <script>
+        ScrollReveal().reveal('.presentation');
+        ScrollReveal().reveal('.welcome', { delay: 250 });
+        ScrollReveal().reveal('.content-1', { delay: 250 });
+        ScrollReveal().reveal('.content-2', { delay: 250 });
+        ScrollReveal().reveal('.the-team', { delay: 250 });
+        ScrollReveal().reveal('.start', { delay: 250 });
+    </script>
+    
+  <script>
+    const images = document.querySelectorAll('.parallax-image');
+    new simpleParallax(images, {
+      scale: 1.5,
+      overflow: true
+    });
+  </script>
+  <script>
+    const btn = document.querySelector('#btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    btn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    })
+</script>
 </body>
 </html>

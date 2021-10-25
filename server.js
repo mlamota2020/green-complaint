@@ -6,7 +6,6 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-const mongoose = require("mongoose");
 const handlebars = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const { createAdminUser } = require("./libs/adminUser");
@@ -67,4 +66,10 @@ app.use(require('./routes/users.routes'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'api')));
 
-module.exports = app;
+// Start server
+
+require('./database');
+
+app.listen(app.get('port'), () => {
+    console.log(`Server on port: %c${app.get('port')}. \n\nDatabase connection status:`, `color: yellow;`);
+});

@@ -1,32 +1,111 @@
-<div class="flex flex-col items-center justify-center px-16 m-6 space-y-6 text-center text-white bg-green-400 shadow-xl hero rounded-xl" style="min-height: 90vh;">
-      <h1 class="text-3xl font-bold md:text-5xl">Help the environment with your reports.</h1>
-      <p class="text-md md:text-lg">Create reports to help to the community and the environment to create a better world.</p>
-      <div class="flex-row">
-        <a class="inline-block px-4 py-2 mb-4 ml-8 font-medium text-green-900 transform bg-white rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Start now
-            </a>
-      </div>
-    </div>
-    <div class="flex flex-col items-center justify-between mx-6 my-16 text-center md:flex-row">
-      <div class="space-y-4 features">
-        <div class="inline-block p-3 bg-green-600 shadow-lg rounded-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-</svg>
+<div class="min-h-screen overflow-hidden wrapper">
+  <header class="flex items-center justify-center !text-center presentation min-h-screen flex-col overflow-hidden">
+    <video src="/media/index-video-presentation.mp4" class="absolute top-0 left-0 object-cover w-full h-full" autoplay loop muted style="z-index: -1;"></video>
+    <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+    Help the environment with your reports.
+  </h1>
+  <p class="mb-5 text-white">
+    Create reports to help to the community and the environment to create a better world.
+  </p>
+  <a href="/users/signin" class="inline-block px-6 py-3 text-transparent shadow-xl rounded-xl" style="background: url(/media/hero-index-button.png) no-repeat center;">
+    Start now &rarr;
+  </a>
+  </header>
+  <div class="w-11/12 mx-auto">
+  <div class="flex flex-col items-center justify-end mt-16 min-h-3/4 welcome">
+    <h1 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">Help the world with your reports.</h1>
+    <div class="video">
+    <video id="video1" class="relative w-full mx-auto mt-10 rounded-md shadow-lg lg:w-1/2" poster="/media/index-video-poster.JPG">
+   <source type="video/mp4" src="/media/index-video-welcome.mp4">
+</video>
+     <div class="flex items-center justify-center w-full p-3 m-3 mx-auto bg-white rounded-lg shadow-lg lg:w-max gap-x-5">
+        <div id="play-btn" class="cursor-pointer video-controls hover:text-teal-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
         </div>
-        <h1 class="text-xl font-extrabold md:text-5xl">
-          Create reports and help to the environment.
-        </h1>
-        <p class="text-lg text-gray-700 md:text-xl">By creating your reports, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.</p>
-        <a class="inline-block px-4 py-2 mb-4 font-medium text-center text-white transform bg-green-500 rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Start now
-            </a>
+        <div id="pause-btn" class="hidden cursor-pointer video-controls hover:text-teal-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div id="mute-btn" class="hidden cursor-pointer video-controls hover:text-teal-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        </div>
+        <div id="unmute-btn" class="cursor-pointer video-controls hover:text-teal-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+</div>
+        <div id="stop-btn" class="cursor-pointer video-controls hover:text-teal-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+          </svg>
+        </div>
+        <div id="replay-btn" class="cursor-pointer video-controls hover:text-teal-500 text-[24px]">
+          <i class="bi bi-reply"></i>
+        </div>
+     </div>
+</div>
+  </div>
+  <div class="flex flex-col-reverse items-center justify-center gap-10 mt-10 md:justify-between content-1 md:flex-row">
+    <div class="flex-auto text-center left content md:text-left">
+      <h1 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">      Create reports and help to the environment.</h1>
+      <p>By creating your reports, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.</p>
+    </div>
+      <div class="flex-auto right content image">
+          <img src="/media/index-image-1.jpg" alt="Mangla image" class="object-cover mx-auto parallax-image w-80 h-80 rounded-xl md:ml-auto md:mr-0" loading="lazy" srcset="/media/index-image-1.jpg 1x, /media/index-image-1.jpg 2x, /media/index-image-1.jpg 3x">
       </div>
+  </div>
+  <div class="flex flex-col-reverse items-center justify-center mt-10 gap-x-10 content-2 md:flex-row">
+    <div class="flex-auto left content image">
+          <img src="/media/index-image-2.jpg" alt="Mangla image" class="object-cover mx-auto parallax-image image-2 w-80 h-80 rounded-xl md:ml-auto md:mr-0" loading="lazy" srcset="/media/index-image-2.jpg 1x, /media/index-image-2.jpg 2x, /media/index-image-2.jpg 3x">
     </div>
-     <div class="flex flex-col items-center justify-center min-h-screen space-y-4 bg-green-500 bg-opacity-25 py-14 mt-14">
-                <h1 class="text-3xl font-bold md:text-4xl lg:text-6xl">Ready to help?</h1>
-                <a class="inline-block px-4 py-2 mb-4 font-medium text-center text-white transform bg-green-500 rounded-xl hover:-translate-y-1 hover:shadow-lg md:m-0" href="/users/signup">
-              Get started
-            </a>
-            </div>
+      <div class="flex-auto text-center md:text-right right">
+      <h1 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">It's totally free.</h1>
+      <p>Your community is very contamiated and you need a lot of reports? No problem. In Green Complaint you have unlimited reports and comments to help the world.</p>
+      </div>
+  </div>
+  <div class="my-10 space-y-5 the-team">
+    <h1 class="mt-10 text-2xl font-extrabold tracking-tight text-center mb-36 sm:text-4xl lg:text-5xl">The team that brings to life Green Complaint.</h1>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 gap-y-24 lg:gap-y-0">
+      <div class="hidden lg:grid"></div>
+      <div class="relative text-center bg-gray-100 shadow-xl p-7 rounded-xl team-member">
+        <img src="/media/matias-team-member.png" alt="Matias La Mota" srcset="/media/matias-team-member.png 1x, /media/matias-team-member.png 2x, /media/matias-team-member.png 3x" class="absolute top-0 object-cover transform -translate-y-1/2 border-4 border-white rounded-full h-36 w-36" style="left: calc(50% - 72px);">
+        <h1 class="mt-20 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl">Matias La Mota</h1>
+        <span class="font-medium text-gray-500">Director, Full-Stack Dev</span>
     </div>
+    <div class="relative text-center bg-gray-100 shadow-xl p-7 rounded-xl team-member">
+        <img src="/icons/placeholder-team-member.png" alt="Nathaly Villón" srcset="/icons/placeholder-team-member.png 1x, /icons/placeholder-team-member.png 2x, /icons/placeholder-team-member.png 3x" class="absolute top-0 object-cover transform -translate-y-1/2 border-4 border-white rounded-full h-36 w-36" style="left: calc(50% - 72px);">
+        <h1 class="mt-20 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl">Nathaly Villón</h1>
+        <span class="font-medium text-gray-500">Graphic Design, Branding</span>
+    </div>
+  </div>
+  </div>
+  <div class="flex flex-col items-center justify-end min-h-screen start gap-y-0">
+    <h1 class="mb-10 text-2xl font-extrabold tracking-tight text-center sm:text-4xl lg:text-5xl">Ready to help?</h1>
+    <a href="/users/siginin" class="inline-block px-6 py-3 text-lg font-medium text-white bg-teal-500 shadow-xl rounded-xl">
+      Start now &rarr;
+    </a>
+    <footer class="w-4/5 mt-24 overflow-hidden h-60">
+    <img src="/media/index-image-3.jpg" alt="A forest in the sunset" srcset="/media/index-image-3.jpg 1x, /media/index-image-3.jpg 2x, /media/index-image-3.jpg 3x" class="object-center w-full shadow-2xl rounded-xl">
+    </footer>
+  </div>
+</div>
+<footer class="flex flex-col items-center justify-between w-screen text-gray-500 bg-gray-100 p-14 footer-index md:flex-row gap-y-10 md:gap-y-0">
+  <div class="logo">
+    <img src="/icons/logo-black.png" alt="Logo" class="inline-block w-10">
+    <span class="inline-block">&nbsp;Green Complaint</span>
+  </div>
+    <div class="copyright">
+      <span>© 2021 - Environmental Club - <a href="https://younglivingacademy.edu.ec/">Young Living Academy</a></span>
+    </div>
+  </footer>
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js">
+</script>
+  <script src="/js/videoHandler.js"></script>
