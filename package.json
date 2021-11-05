@@ -1,6 +1,6 @@
 {
   "name": "green-complaint",
-  "version": "2.2.1",
+  "version": "2.2.0.1",
   "description": "Report environment problems",
   "main": "server.js",
   "dependencies": {

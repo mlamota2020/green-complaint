@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const handlebars = require('handlebars');
+const chalk = require('chalk');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const { createAdminUser } = require("./libs/adminUser");
 
@@ -71,5 +72,5 @@ app.use(express.static(path.join(__dirname, 'api')));
 require('./database');
 
 app.listen(app.get('port'), () => {
-    console.log(`Server on port: %c${app.get('port')}. \n\nDatabase connection status:`, `color: yellow;`);
+    console.log('Server on port: ' + chalk.green.bold(app.get('port')) + '! \n');
 });

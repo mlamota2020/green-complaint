@@ -1,12 +1,6 @@
 # Dependencies modules
 node_modules
 
-# Build folder
-build
-
-# VS Code Workspace
-Green Complaint -.code-workspace
-
 # Front end Checklist PDF
 front-end-checklist.pdf
 

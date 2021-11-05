@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://root:LkMU690TSfy@green-complaint.mcj7b.mongodb.net/reports?retryWrites=true&w=majority'; 
+const chalk = require('chalk');
+const uri = /* 'mongodb+srv://root:LkMU690TSfy@green-complaint.mcj7b.mongodb.net/reports?retryWrites=true&w=majority' */'mongodb://localhost/prueba'; 
 
 mongoose.connect(uri, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
-.then(db => console.log('%cfine!', 'color: yellow;'))
-.catch(err => console.log(err));
+.then(db => console.log(chalk.yellow.bold('Database connection status: fine!')))
+.catch(err => console.log(err))
