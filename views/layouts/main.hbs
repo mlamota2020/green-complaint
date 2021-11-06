@@ -39,15 +39,22 @@
     <link rel="stylesheet" href="/css/build.css">
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
 </head>
-<body class="overflow-x-hidden">
-  <main>
+<body class="overflow-x-hidden" onload="disableLoader()">
+    <div class="loader fixed top-0 left-0 w-full h-full transition-all duration-500">
+      <div class=" absolute top-0 left-0 w-full h-full bg-black/30 backdrop-blur-xl"></div>
+      <div class="bg-white p-8 shadow-lg -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 rounded-xl">
+        <div class="w-12 h-12 rounded-full border-4 border-gray-200 border-t-teal-500 animate-spin"></div>
+      </div>
+    </div>
       <noscript>
           You need to have JavaScript or enable it to see the page correctly.
       </noscript>
+  <main>
     {{>messages}}
     {{{body}}}
 </main>
     <script src="/manifest/renderer.js"></script>
+    <script src="/service-worker.js"></script>
     <script>
         ScrollReveal().reveal('.presentation');
         ScrollReveal().reveal('.welcome', { delay: 250 });
@@ -72,5 +79,61 @@
         sidebar.classList.toggle('active');
     })
 </script>
+<script>
+  const loader = document.querySelector('.loader');
+  const allForms = document.querySelectorAll('form');
+  const allLinks = document.querySelectorAll('a');
+
+function disableLoader() {
+    setTimeout(() => {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 500);
+    loader.classList.add('opacity-0');
+    }, 3000);
+};
+
+function activateLoader() {
+    loader.classList.remove('opacity-0');
+    loader.classList.remove('hidden');
+    loader.classList.add('opacity-1');
+};
+
+allForms.addEventListener('submit', activateLoader);
+allLinks.addEventListener('click', activateLoader);
+
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+  navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+  // Registration was successful
+  console.log('Registered!');
+  }, function(err) {
+  // registration failed :(
+  console.log('ServiceWorker registration failed: ', err);
+  }).catch(function(err) {
+  console.log(err);
+  });
+  });
+  } else {
+  console.log('service worker is not supported');
+  }
+  </script>
+  <script>
+    window.addEventListener('beforeinstallprompt', e => {
+  console.log('beforeinstallprompt Event fired');
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  this.deferredPrompt = e;
+  return false;
+  });
+// When you want to trigger prompt:
+this.deferredPrompt.prompt();
+  this.deferredPrompt.userChoice.then(choice => {
+  console.log(choice);
+  });
+this.deferredPrompt = null;
+  </script>
 </body>
 </html>
