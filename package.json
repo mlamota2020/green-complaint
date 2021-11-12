@@ -1,6 +1,6 @@
 {
   "name": "green-complaint",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "Report environment problems",
   "main": "server.js",
   "dependencies": {
@@ -54,7 +54,6 @@
     "mkdirp": "^0.5.5",
     "moment": "^2.29.1",
     "mongoose": "^6.0.0",
-    "morgan": "^1.10.0",
     "ms": "^2.1.2",
     "normalize-url": "^4.5.1",
     "npm-conf": "^1.1.3",

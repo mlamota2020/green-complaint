@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const morgan = require('morgan');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -34,7 +33,6 @@ app.set('view engine', '.hbs');
 
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
-app.use(morgan('dev'));
 app.use(session({
     secret: 'green-complaint',
     resave: true,
