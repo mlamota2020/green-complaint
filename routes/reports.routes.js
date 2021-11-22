@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { renderReportForm, createNewReport, renderReports, deleteReport, solveReport, renderEditReport, editReport, renderResolvedReports, restoreReport } = require('./../controllers/reports.controller');
+const { renderReportForm, createNewReport, renderReports, deleteReport, solveReport, renderEditReport, editReport, renderResolvedReports, restoreReport, renderStats } = require('./../controllers/reports.controller');
 const { isAuthenticated } = require('./../helpers/auth');
 
 router.get('/reports/add', isAuthenticated, renderReportForm);
@@ -20,5 +20,7 @@ router.delete('/reports/delete/:id', isAuthenticated, deleteReport);
 router.get('/reports/resolved', isAuthenticated, renderResolvedReports);
 
 router.put('/reports/restore/:id', isAuthenticated, restoreReport);
+
+router.get('/stats', renderStats);
 
 module.exports = router;

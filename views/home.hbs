@@ -1,8 +1,15 @@
-<style>
-    .group:hover .tooltip {
-        opacity: 1;
-    }
-</style>
+<div class="graphDialog">
+        <div id="graphDialog" class="fixed bottom-8 right-8 rounded-3xl bg-white shadow-2xl w-2/5 h-2/5 z-50 overflow-hidden">
+        <div id="graphNavbar" class="navbar bg-teal-900 text-white w-full flex items-center justify-between p-2 !rounded-t-3xl">
+          <div></div>
+          <div class="uppercase text-gray-300 tracking-[0.3em] select-none">Graph</div>
+          <div></div>
+        </div>
+          <div id="graphContent" class="content bg-white w-full h-[84.6%]">
+          <iframe src="/stats" frameborder="0" class="w-full h-full"></iframe>
+        </div>
+        </div>
+        </div>
 <div class="relative min-h-screen bg-gray-50">
     <!-- Sidebar -->
     <div class="fixed z-50 top-10 left-5">
@@ -86,7 +93,7 @@
                 </div>
             </a>
             <!-- Create option -->
-            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports">
+            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports/add">
                 <div class="p-4 bg-gray-200 rounded-t-lg header">
                     <h1 class="text-2xl font-semibold">Create your own</h1>
                 </div>
@@ -96,7 +103,7 @@
                 </div>
             </a>
             <!-- User option -->
-            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/reports">
+            <a class="flex flex-col justify-center w-11/12 mr-10 transform shadow-xl hover:-translate-y-3 hover:shadow-2xl" href="/users/options/{{user.id}}">
                 <div class="p-4 bg-gray-200 rounded-t-lg header">
                     <h1 class="text-2xl font-semibold">Edit your user</h1>
                 </div>

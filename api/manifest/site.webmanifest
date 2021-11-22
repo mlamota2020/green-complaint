@@ -1,19 +1,89 @@
 {
-    "name": "Green Complaint | Report environment problems",
+    "name": "Green Complaint",
     "short_name": "Green Complaint",
     "icons": [
         {
-            "src": "/icons/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/icons/apple-touch-icon-57x57.png",
+            "sizes": "57x57",
             "type": "image/png"
         },
         {
-            "src": "/icons/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/icons/apple-touch-icon-60x60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/apple-touch-icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/apple-touch-icon-76x76.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/apple-touch-icon-114x114.png",
+            "sizes": "114x114",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/apple-touch-icon-120x120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/apple-touch-icon.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/favicon.ico",
+            "sizes": "133x133",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/icons/logo-black.png",
+            "sizes": "133x133",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/logo-green.png",
+            "sizes": "133x133",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/logo-white.png",
+            "sizes": "133x133",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/mstile-70x70.png",
+            "sizes": "70x70",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/mstile-150x150.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/mstile-310x150.png",
+            "sizes": "310x150",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
-}
+        "theme_color": "#134e4a",
+        "background_color": "#134e4a",
+        "display": "standalone"
+    }

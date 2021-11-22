@@ -65,4 +65,8 @@ reportsCTRL.restoreReport = async (req, res) => {
     res.redirect('/reports');
 }
 
+reportsCTRL.renderStats = (req, res) => {
+    res.render('reports/stats');
+}
+
 module.exports = reportsCTRL;

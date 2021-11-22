@@ -36,13 +36,16 @@
     content="Create reports to help to the community and the environment to create a better world. By doing this, you are not only helping your community to have better views. You also help the place have a better environment and everyone can benefit from it.">
   <script src="https://unpkg.com/scrollreveal"></script>
   <title>Green Complaint | Report enviroment problems</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png">
-  <link rel="manifest" href="/manifest/site.webmanifest">
-  <link rel="shortcut icon" href="/icons/logo-green.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
-  <meta name="msapplication-config" content="/manifest/browserconfig.xml">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#134e4a">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="Green Complaint">
+  <meta name="application-name" content="Green Complaint">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-status-bar-style" content="green">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -80,9 +83,15 @@
     You need to have JavaScript or enable it to see the page correctly.
   </noscript>
   <main>
+    <style>
+      .group:hover .tooltip {
+        opacity: 1;
+      }
+    </style>
     {{>messages}}
     {{{body}}}
   </main>
+  <script src="/client/app.dom.bundle.js"></script>
   <script src="/manifest/renderer.js"></script>
   <script src="/service-worker.js"></script>
   <script>

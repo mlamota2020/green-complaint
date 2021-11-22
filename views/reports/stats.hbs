@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+<canvas id="myChart" class="w-full h-full font-sans"></canvas>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [{
+            label: ['Families that have contributed'],
+            data: [0],
+            backgroundColor: 'rgba(19, 78, 74, .2)',
+            borderColor: 'rgba(19, 78, 74, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        family: 'Inter'
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
