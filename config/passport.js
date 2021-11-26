@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    done(null, user.id, { message: `Hey ${user.name}!` });
+    done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
